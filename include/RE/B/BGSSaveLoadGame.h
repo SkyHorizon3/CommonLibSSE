@@ -55,6 +55,7 @@ namespace RE
 
 			kTotal
 		};
+
 	private:
 		KEEP_FOR_RE()
 	};
@@ -64,6 +65,7 @@ namespace RE
 	{
 	public:
 		BSTHashMap<TESForm*, BGSLoadGameSubBuffer> maps[QUEUED_SUB_BUFFER_TYPES::kTotal];
+
 	private:
 		KEEP_FOR_RE()
 	};
@@ -120,7 +122,7 @@ namespace RE
 
 // members
 #ifndef SKYRIMVR
-		TESFileCollection                        savedFiles;                  // 000
+		TESFileCollection savedFiles;  // 000
 #else
 		std::uint8_t pluginList[0xFF];  // 000
 		std::uint8_t unk18[0xFF];       // 0FF

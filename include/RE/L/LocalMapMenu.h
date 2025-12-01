@@ -45,13 +45,13 @@ namespace RE
 			Data             unk301F8;        // 301F8
 			std::uint64_t    unk30240;        // 30240
 			std::uint64_t    unk30248;        // 30248
-			std::uint64_t padVR1;  // VR offset moved by 0x10
-			std::uint64_t padVR2;
-			std::uint64_t                  unk30250;  // 30250
-			std::uint64_t                  unk30258;  // 30258
+			std::uint64_t    padVR1;          // VR offset moved by 0x10
+			std::uint64_t    padVR2;
+			std::uint64_t    unk30250;  // 30250
+			std::uint64_t    unk30258;  // 30258
 #else
-			BSCullingProcess               cullingProcess;         // 00000
-			BSCullingJob                   cullingJob;             // 301F8
+			BSCullingProcess cullingProcess;  // 00000
+			BSCullingJob     cullingJob;      // 301F8
 #endif
 			LocalMapCamera                 camera;                 // 30260
 			NiPointer<BSShaderAccumulator> accumulator;            // 302C8

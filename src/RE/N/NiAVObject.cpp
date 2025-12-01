@@ -330,7 +330,7 @@ namespace RE
 		static REL::Relocation<func_t> func{ RELOCATION_ID(76271, 78103) };
 		return func(this, a_enable, a_arg2, a_arg3);
 	}
-	
+
 	BSLightingShaderProperty* NiAVObject::temp_nicast(BSGeometry* a_geometry)
 	{
 		if (auto effect = a_geometry->properties[BSGeometry::States::kEffect].get(); effect) {

@@ -2,7 +2,7 @@
 
 #include "RE/I/IMessageBoxCallback.h"
 
-#ifndef SKYRIMVR // TODO, why no VTABLE?
+#ifndef SKYRIMVR  // TODO, why no VTABLE?
 
 namespace RE
 {

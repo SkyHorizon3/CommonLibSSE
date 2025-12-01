@@ -49,10 +49,10 @@ namespace RE
 		explicit InventoryChanges(TESObjectREFR* a_ref);
 		~InventoryChanges();
 
-		void               AddEntryData(InventoryEntryData* a_entry);
+		void AddEntryData(InventoryEntryData* a_entry);
 #ifdef SKYRIMVR
-		void               GenerateLeveledListChanges();
-		std::int16_t       GetItemCount(RE::TESBoundObject* a_obj);
+		void         GenerateLeveledListChanges();
+		std::int16_t GetItemCount(RE::TESBoundObject* a_obj);
 #endif
 		RE::ExtraDataList* EnchantObject(RE::TESBoundObject* a_obj, RE::ExtraDataList* a_extraList, RE::EnchantmentItem* a_enchantment, uint16_t a_charge);
 		TESObjectARMO*     GetArmorInSlot(std::int32_t a_slot);
