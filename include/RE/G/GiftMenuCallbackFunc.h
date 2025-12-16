@@ -2,8 +2,6 @@
 
 #include "RE/I/IGiftMenuScriptCallback.h"
 
-#ifndef SKYRIMVR  // TODO, why no VTABLE?
-
 namespace RE
 {
 	namespace BSScript
@@ -15,8 +13,8 @@ namespace RE
 	{
 		class GiftMenuCallbackFunc : public IGiftMenuScriptCallback
 		{
-			inline static constexpr auto RTTI = RTTI_SkyrimScript__A0x17558f7c____GiftMenuCallbackFunc;
-			inline static constexpr auto VTABLE = VTABLE_SkyrimScript__A0x17558f7c____GiftMenuCallbackFunc;
+			inline static constexpr auto RTTI = RTTI_SkyrimScript__GiftMenuCallbackFunc;
+			inline static constexpr auto VTABLE = VTABLE_SkyrimScript__GiftMenuCallbackFunc;
 
 			virtual ~GiftMenuCallbackFunc();  // 00
 
@@ -31,5 +29,3 @@ namespace RE
 		static_assert(sizeof(GiftMenuCallbackFunc) == 0x20);
 	}
 }
-
-#endif

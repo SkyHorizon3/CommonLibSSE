@@ -3373,7 +3373,7 @@ namespace RE
 	inline constexpr REL::ID     RTTI_IUnknown(static_cast<std::uint64_t>(690268));
 	inline constexpr REL::ID     RTTI_IXAPO(static_cast<std::uint64_t>(690267));
 	inline constexpr REL::ID     RTTI_CXAPOBase(static_cast<std::uint64_t>(690266));
-	inline constexpr REL::ID     RTTI_SkyrimScript__A0x17558f7c____GiftMenuCallbackFunc(static_cast<std::uint64_t>(689189));
+	inline constexpr REL::ID     RTTI_SkyrimScript__GiftMenuCallbackFunc(static_cast<std::uint64_t>(689189));
 	inline constexpr REL::ID     RTTI___UpdateStarText(static_cast<std::uint64_t>(688912));
 	inline constexpr REL::ID     RTTI___UpdateConstellationAnims(static_cast<std::uint64_t>(688911));
 	inline constexpr REL::ID     RTTI___SpendSoulCallback(static_cast<std::uint64_t>(688869));
