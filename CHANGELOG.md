@@ -1,3 +1,9 @@
+## [4.8.0](https://github.com/alandtse/CommonLibVR/compare/v4.7.1...v4.8.0) (2026-03-19)
+
+### Features
+
+* add more RE for shadow rendering ([fcbbd51](https://github.com/alandtse/CommonLibVR/commit/fcbbd515fef472447e6b77e06a53453529e1c322))
+
 ## [4.7.1](https://github.com/alandtse/CommonLibVR/compare/v4.7.0...v4.7.1) (2026-03-15)
 
 ### Bug Fixes
