@@ -138,8 +138,8 @@ namespace RE
 	EYE_POSITION<NiPoint3>                     previousPosAdjust;                                           /* 368, VR 3BC */                                     \
 	EYE_POSITION<ViewData>                     cameraData;                                                  /* 380, VR 3E0 - size of each is 250 */               \
 	uint32_t                                   alphaBlendModeExtra;                                         /* 5d0, VR 88c */                                     \
-	float                                      unk5d4;                                                      /* 5d4, VR 884 */                                     \
-	float                                      unk5d8;                                                      /* 5d8, VR 888 */                                     \
+	float                                      viewNear;                                                    /* 5d4, VR 884 */                                     \
+	float                                      viewFar;                                                     /* 5d8, VR 888 */                                     \
 	uint32_t                                   unk5dc;                                                      /* 5dc */
                 FLAT_RUNTIME_DATA_CONTENT;
 			};
@@ -225,8 +225,8 @@ namespace RE
 	uint8_t                                    unk3d4[0x3e0 - 0x3d4];                                       /* VR 3d4 - pad between previousPosAdjust and cameraData (also exists in flat at 0x374) */ \
 	EYE_POSITION<ViewData, 2>                  cameraData;                                                  /* 380, VR 3E0 - size of each is 250 */                                                    \
 	float                                      drawStereo;                                                  /* VR 880 only - stereo rendering mode */                                                  \
-	float                                      unk884;                                                      /* VR 884 only */                                                                          \
-	float                                      unk888;                                                      /* VR 888 only */                                                                          \
+	float                                      viewNear;                                                    /* VR 884 only */                                                                          \
+	float                                      viewFar;                                                     /* VR 888 only */                                                                          \
 	uint32_t                                   alphaBlendModeExtra;                                         /* 5d0, VR 88c */                                                                          \
 	ID3D11Buffer*                              VSConstantBuffers[12];                                       /* VR 890 only */                                                                          \
 	ID3D11Buffer*                              PSConstantBuffers[12];                                       /* VR 8F0 only */

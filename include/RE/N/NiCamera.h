@@ -27,19 +27,19 @@ namespace RE
 		// VR Layout
 		struct RUNTIME_DATA_VR
 		{
-#define RUNTIME_DATA_CONTENT_VR                          \
-	float                   worldToCam[4][4];   /* 00 */ \
-	std::uint64_t           unk40;              /* 40 */ \
-	NiFrustum*              viewFrustumArray;   /* 48 */ \
-	BSTArray<NiRect<float>> eyeViewportRects;   /* 50 */ \
-	BSTArray<NiMatrix44>    eyeViewMatrices;    /* 68 */ \
-	void*                   eyeCullingProcs[2]; /* 80 */ \
+#define RUNTIME_DATA_CONTENT_VR                                                              \
+	float                   worldToCam[4][4];   /* 00 */                                     \
+	NiFrustum*              viewFrustumBuffer;  /* 40 - UpdateProjection writes here */      \
+	NiFrustum*              viewFrustumArray;   /* 48 - per-eye frustums for GetNearPlane */ \
+	BSTArray<NiRect<float>> eyeViewportRects;   /* 50 */                                     \
+	BSTArray<NiMatrix44>    eyeViewMatrices;    /* 68 */                                     \
+	void*                   eyeCullingProcs[2]; /* 80 */                                     \
 	std::uint32_t           unk1C8;             /* 90 */
 
 			RUNTIME_DATA_CONTENT_VR
 		};
 		static_assert(sizeof(RUNTIME_DATA_VR) == 0x98);
-		static_assert(offsetof(RUNTIME_DATA_VR, unk40) == 0x40);
+		static_assert(offsetof(RUNTIME_DATA_VR, viewFrustumBuffer) == 0x40);
 		static_assert(offsetof(RUNTIME_DATA_VR, viewFrustumArray) == 0x48);
 		static_assert(offsetof(RUNTIME_DATA_VR, eyeViewportRects) == 0x50);
 		static_assert(offsetof(RUNTIME_DATA_VR, eyeViewMatrices) == 0x68);
@@ -84,7 +84,7 @@ namespace RE
 		static bool WorldPtToScreenPt3(const float a_matrix[4][4], const NiRect<float>& a_port, const NiPoint3& a_point, float& a_xOut, float& a_yOut, float& a_zOut, float a_zeroTolerance);
 
 		RUNTIME_DATA_ACCESSOR(RUNTIME_DATA, 0x110, 0);
-		RUNTIME_DATA_ACCESSOR_EX(RUNTIME_DATA2, GetRuntimeData2, 0x150, 0x1CC);
+		RUNTIME_DATA_ACCESSOR_EX(RUNTIME_DATA2, GetRuntimeData2, 0x150, 0x1D0);
 		VR_RUNTIME_DATA_ACCESSOR(RUNTIME_DATA_VR, GetVRRuntimeData, 0x138);
 
 		// return left in VR

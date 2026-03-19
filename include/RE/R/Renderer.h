@@ -169,6 +169,19 @@ namespace RE
 
 			[[nodiscard]] static Renderer* GetSingleton() noexcept;
 
+			// VR only: global bool controlling stereo geometry shader instancing.
+			// Shadow rendering clears this to prevent quadrant artifacts (each hemisphere doubled).
+			// VR address: 0x143181708 (8 bytes after BSRenderManager* pointer at 0x143181700).
+			[[nodiscard]] static bool& GetDrawStereo() noexcept
+			{
+				if (REL::Module::IsVR()) {
+					static auto addr = REL::Offset(0x3181708).address();
+					return *reinterpret_cast<bool*>(addr);
+				}
+				static bool dummy = false;
+				return dummy;
+			}
+
 			void CreateSwapChain(REX::W32::HWND* a_window, bool a_setCurrent);
 			void KillWindow(std::uint32_t a_windowID);
 			void Lock();
