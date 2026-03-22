@@ -1,3 +1,9 @@
+## [4.8.1](https://github.com/alandtse/CommonLibVR/compare/v4.8.0...v4.8.1) (2026-03-22)
+
+### Bug Fixes
+
+* **VR:** BSInputDevice offsets ([#135](https://github.com/alandtse/CommonLibVR/issues/135)) ([cf14a90](https://github.com/alandtse/CommonLibVR/commit/cf14a90c47c4f44b5b7874b11261a9feddda3965)), closes [#134](https://github.com/alandtse/CommonLibVR/issues/134) [#86](https://github.com/alandtse/CommonLibVR/issues/86)
+
 ## [4.8.0](https://github.com/alandtse/CommonLibVR/compare/v4.7.1...v4.8.0) (2026-03-19)
 
 ### Features
