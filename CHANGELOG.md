@@ -1,3 +1,9 @@
+## [4.8.2](https://github.com/alandtse/CommonLibVR/compare/v4.8.1...v4.8.2) (2026-03-22)
+
+### Bug Fixes
+
+* shadowscenenode multiruntime support ([f9734d9](https://github.com/alandtse/CommonLibVR/commit/f9734d9df06ac4b2c5bb069a17ca5081c882919b))
+
 ## [4.8.1](https://github.com/alandtse/CommonLibVR/compare/v4.8.0...v4.8.1) (2026-03-22)
 
 ### Bug Fixes
