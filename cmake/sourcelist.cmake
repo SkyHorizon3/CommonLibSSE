@@ -1960,6 +1960,7 @@ set(SOURCES
 	include/REX/W32/VERSION.h
 	include/REX/W32/XINPUT.h
 	include/SKSE/API.h
+	include/SKSE/ContextHook.h
 	include/SKSE/Events.h
 	include/SKSE/IAT.h
 	include/SKSE/Impl/PCH.h
