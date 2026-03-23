@@ -1,3 +1,9 @@
+## [4.9.0](https://github.com/alandtse/CommonLibVR/compare/v4.8.2...v4.9.0) (2026-03-23)
+
+### Features
+
+* add contexthook ([90a8f2f](https://github.com/alandtse/CommonLibVR/commit/90a8f2fe590025ccfeee5a7e1d33c352ea1764d8))
+
 ## [4.8.2](https://github.com/alandtse/CommonLibVR/compare/v4.8.1...v4.8.2) (2026-03-22)
 
 ### Bug Fixes
