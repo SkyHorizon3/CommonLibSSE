@@ -3,6 +3,7 @@ set(SOURCES
 	include/RE/A/AIProcess.h
 	include/RE/A/AITimeStamp.h
 	include/RE/A/AITimer.h
+	include/RE/A/AStarNode.h
 	include/RE/A/AbsorbEffect.h
 	include/RE/A/AbstractHeap.h
 	include/RE/A/AccumulatingValueModifierEffect.h
@@ -257,6 +258,7 @@ set(SOURCES
 	include/RE/B/BSFaceGenNiNode.h
 	include/RE/B/BSFadeNode.h
 	include/RE/B/BSFadeNodeCuller.h
+	include/RE/B/BSFastNavmeshTriLocation.h
 	include/RE/B/BSFile.h
 	include/RE/B/BSFixedString.h
 	include/RE/B/BSFlattenedBoneTree.h
@@ -323,6 +325,7 @@ set(SOURCES
 	include/RE/B/BSMusicManager.h
 	include/RE/B/BSNavmesh.h
 	include/RE/B/BSNavmeshInfoMap.h
+	include/RE/B/BSNavmeshSearch.h
 	include/RE/B/BSNiAllocator.h
 	include/RE/B/BSNiNode.h
 	include/RE/B/BSOcclusionBox.h
@@ -629,6 +632,7 @@ set(SOURCES
 	include/RE/C/CombatMagicCasterWard.h
 	include/RE/C/CombatManager.h
 	include/RE/C/CombatMeleeAimController.h
+	include/RE/C/CombatNavmeshSearch.h
 	include/RE/C/CombatObject.h
 	include/RE/C/CombatPath.h
 	include/RE/C/CombatSearchLocation.h
