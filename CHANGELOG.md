@@ -1,3 +1,10 @@
+## [4.11.0](https://github.com/alandtse/CommonLibVR/compare/v4.10.0...v4.11.0) (2026-04-02)
+
+### Features
+
+* RE ImageSpaceManager and TESWaterSystem ([41fa218](https://github.com/alandtse/CommonLibVR/commit/41fa2184cd99c1676015c0afead70db1f450c9df))
+* RE NavMesh ([bae6765](https://github.com/alandtse/CommonLibVR/commit/bae6765d340d07c30e0b2230d7c613e61f937e5f))
+
 ## [4.10.0](https://github.com/alandtse/CommonLibVR/compare/v4.9.0...v4.10.0) (2026-03-26)
 
 ### Features
