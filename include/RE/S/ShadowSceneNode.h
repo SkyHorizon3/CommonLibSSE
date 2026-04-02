@@ -132,8 +132,15 @@ namespace RE
 		// members
 #ifndef SKYRIM_CROSS_VR
 		RUNTIME_DATA_CONTENT;  // 128, 150
+#	ifdef EXCLUSIVE_SKYRIM_VR
+		NiPoint3 unk328;  // 328 - VR only
+#	endif
+		bool          allowLightRemoveQueues;  // 300 / 334
+		std::uint8_t  pad301;                  // 301 / 335
+		std::uint16_t pad302;                  // 302 / 336
+		float         windMagnitude;           // 304 / 338
 #endif
 	};
-	STATIC_ASSERT_SIZE(ShadowSceneNode, 0x308, 0x308, 0x33C, 0x110);
+	STATIC_ASSERT_SIZE(ShadowSceneNode, 0x308, 0x308, 0x340, 0x110);
 }
 #undef RUNTIME_DATA_CONTENT

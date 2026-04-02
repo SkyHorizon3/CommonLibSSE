@@ -2339,6 +2339,7 @@ set(SOURCES
 	src/RE/N/NiNode.cpp
 	src/RE/N/NiObject.cpp
 	src/RE/N/NiObjectNET.cpp
+	src/RE/N/NiPick.cpp
 	src/RE/N/NiPoint2.cpp
 	src/RE/N/NiPoint3.cpp
 	src/RE/N/NiQuaternion.cpp

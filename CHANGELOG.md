@@ -1,3 +1,11 @@
+## [4.10.0](https://github.com/alandtse/CommonLibVR/compare/v4.9.0...v4.10.0) (2026-03-26)
+
+### Features
+
+* Improved NiPick a bit more, added helpful comments to some members ([bb18ccd](https://github.com/alandtse/CommonLibVR/commit/bb18ccdba4760b749a0bd7f6659e5495b6cfca38))
+* merge po3 ([1160f62](https://github.com/alandtse/CommonLibVR/commit/1160f628e01c6db386071e8642c56add36fdd8c9))
+* RE NiPick more ([a3829d4](https://github.com/alandtse/CommonLibVR/commit/a3829d497258bcbc90b8858fc2b5fb1d057ec549))
+
 ## [4.9.0](https://github.com/alandtse/CommonLibVR/compare/v4.8.2...v4.9.0) (2026-03-23)
 
 ### Features
