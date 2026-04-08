@@ -1,3 +1,9 @@
+## [4.12.0](https://github.com/alandtse/CommonLibVR/compare/v4.11.0...v4.12.0) (2026-04-08)
+
+### Features
+
+* **VR:** allow lazy loading of esl datahandler ([#140](https://github.com/alandtse/CommonLibVR/issues/140)) ([7df3e9c](https://github.com/alandtse/CommonLibVR/commit/7df3e9cb88f4285fccc6b9342cef48b52055fa0f))
+
 ## [4.11.0](https://github.com/alandtse/CommonLibVR/compare/v4.10.0...v4.11.0) (2026-04-02)
 
 ### Features
