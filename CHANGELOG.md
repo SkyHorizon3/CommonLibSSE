@@ -1,3 +1,14 @@
+## [4.13.0](https://github.com/alandtse/CommonLibVR/compare/v4.12.0...v4.13.0) (2026-04-09)
+
+### Features
+
+* add re from enginefixes ng porting ([#142](https://github.com/alandtse/CommonLibVR/issues/142)) ([e4e8609](https://github.com/alandtse/CommonLibVR/commit/e4e8609af47c75045b7345434064edf42397975f))
+
+### Bug Fixes
+
+* handle includeLength<0 context hooks with correct public RIP ([#139](https://github.com/alandtse/CommonLibVR/issues/139)) ([01d2af7](https://github.com/alandtse/CommonLibVR/commit/01d2af79d2cf0f9b7fe2944213acdc06c8e6e9ac))
+* **VR:** use atomics for lazy esl ([#141](https://github.com/alandtse/CommonLibVR/issues/141)) ([bbe0f49](https://github.com/alandtse/CommonLibVR/commit/bbe0f4911313a884e535d7d3bf45ed5ec4f0ba9d))
+
 ## [4.12.0](https://github.com/alandtse/CommonLibVR/compare/v4.11.0...v4.12.0) (2026-04-08)
 
 ### Features
