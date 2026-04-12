@@ -1,3 +1,9 @@
+## [4.14.0](https://github.com/alandtse/CommonLibVR/compare/v4.13.1...v4.14.0) (2026-04-12)
+
+### Features
+
+* add Actor::CalculateLOS ([#143](https://github.com/alandtse/CommonLibVR/issues/143)) ([04857f5](https://github.com/alandtse/CommonLibVR/commit/04857f53a5250d915ef9b8d9d20480be97e4c5eb))
+
 ## [4.13.1](https://github.com/alandtse/CommonLibVR/compare/v4.13.0...v4.13.1) (2026-04-12)
 
 ### Bug Fixes
