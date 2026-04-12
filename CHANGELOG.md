@@ -1,3 +1,9 @@
+## [4.13.1](https://github.com/alandtse/CommonLibVR/compare/v4.13.0...v4.13.1) (2026-04-12)
+
+### Bug Fixes
+
+* Main members ([#144](https://github.com/alandtse/CommonLibVR/issues/144)) ([4e8a9d5](https://github.com/alandtse/CommonLibVR/commit/4e8a9d585d5182e8b5293477c52b174793c7e1fe))
+
 ## [4.13.0](https://github.com/alandtse/CommonLibVR/compare/v4.12.0...v4.13.0) (2026-04-09)
 
 ### Features
