@@ -1,3 +1,9 @@
+## [4.15.0](https://github.com/alandtse/CommonLibVR/compare/v4.14.0...v4.15.0) (2026-04-27)
+
+### Features
+
+* add GetSettingRef accessor ([b5b6ed3](https://github.com/alandtse/CommonLibVR/commit/b5b6ed35a9c04fade3ee391054eda64c048e57e0))
+
 ## [4.14.0](https://github.com/alandtse/CommonLibVR/compare/v4.13.1...v4.14.0) (2026-04-12)
 
 ### Features
