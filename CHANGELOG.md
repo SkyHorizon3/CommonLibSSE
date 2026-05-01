@@ -1,3 +1,9 @@
+## [4.15.1](https://github.com/alandtse/CommonLibVR/compare/v4.15.0...v4.15.1) (2026-05-01)
+
+### Bug Fixes
+
+* add runtime data acessor for bssubindextrishape ([#147](https://github.com/alandtse/CommonLibVR/issues/147)) ([c3c3849](https://github.com/alandtse/CommonLibVR/commit/c3c3849900cb7604f71d6095799f75c88a403e4f))
+
 ## [4.15.0](https://github.com/alandtse/CommonLibVR/compare/v4.14.0...v4.15.0) (2026-04-27)
 
 ### Features
