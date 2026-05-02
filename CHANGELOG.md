@@ -1,3 +1,13 @@
+## [4.17.0](https://github.com/alandtse/CommonLibVR/compare/v4.16.0...v4.17.0) (2026-05-02)
+
+### Features
+
+* merge po3 ([529d8f2](https://github.com/alandtse/CommonLibVR/commit/529d8f27a218bcd6f8f02acf9a26b847d545cf9b))
+
+### Bug Fixes
+
+* Missing include in TutorialMenu.cpp ([34a6cec](https://github.com/alandtse/CommonLibVR/commit/34a6cecffce5abe5fcf5b36aab1339e7bd77d6bb))
+
 ## [4.16.0](https://github.com/alandtse/CommonLibVR/compare/v4.15.1...v4.16.0) (2026-05-02)
 
 ### Features
