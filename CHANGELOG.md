@@ -1,3 +1,9 @@
+## [4.16.0](https://github.com/alandtse/CommonLibVR/compare/v4.15.1...v4.16.0) (2026-05-02)
+
+### Features
+
+* **VR:** identify BSVRInterface/BSOpenVR vtable ([#148](https://github.com/alandtse/CommonLibVR/issues/148)) ([24f7c39](https://github.com/alandtse/CommonLibVR/commit/24f7c39b93600e83f35615bfc2ded3cb9b717910))
+
 ## [4.15.1](https://github.com/alandtse/CommonLibVR/compare/v4.15.0...v4.15.1) (2026-05-01)
 
 ### Bug Fixes
