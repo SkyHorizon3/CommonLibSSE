@@ -1,3 +1,9 @@
+## [4.17.1](https://github.com/alandtse/CommonLibVR/compare/v4.17.0...v4.17.1) (2026-05-08)
+
+### Bug Fixes
+
+* **BSShadowLight:** GetIsDirectionalLight return ([#149](https://github.com/alandtse/CommonLibVR/issues/149)) ([2a5c01b](https://github.com/alandtse/CommonLibVR/commit/2a5c01b614078de99d3fa832063fa5177ea6f217))
+
 ## [4.17.0](https://github.com/alandtse/CommonLibVR/compare/v4.16.0...v4.17.0) (2026-05-02)
 
 ### Features
