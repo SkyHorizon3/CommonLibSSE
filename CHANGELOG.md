@@ -1,3 +1,9 @@
+## [4.18.0](https://github.com/alandtse/CommonLibVR/compare/v4.17.1...v4.18.0) (2026-05-10)
+
+### Features
+
+* **BSShaderRenderTargets:** name VR slot 114 ([#150](https://github.com/alandtse/CommonLibVR/issues/150)) ([02565ab](https://github.com/alandtse/CommonLibVR/commit/02565ab9d01dd250745ab0894aedff6a288c2f2a))
+
 ## [4.17.1](https://github.com/alandtse/CommonLibVR/compare/v4.17.0...v4.17.1) (2026-05-08)
 
 ### Bug Fixes
