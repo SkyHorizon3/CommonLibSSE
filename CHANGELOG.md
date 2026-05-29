@@ -1,3 +1,9 @@
+## [4.19.0](https://github.com/alandtse/CommonLibVR/compare/v4.18.0...v4.19.0) (2026-05-29)
+
+### Features
+
+* **BSEffectShaderProperty:** name emittanceColor and render passes ([#154](https://github.com/alandtse/CommonLibVR/issues/154)) ([adcd35c](https://github.com/alandtse/CommonLibVR/commit/adcd35cbd1bbf14a61a0767a5f72bd04d952662f))
+
 ## [4.18.0](https://github.com/alandtse/CommonLibVR/compare/v4.17.1...v4.18.0) (2026-05-10)
 
 ### Features
