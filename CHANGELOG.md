@@ -1,3 +1,15 @@
+## [4.20.0](https://github.com/alandtse/CommonLibVR/compare/v4.19.0...v4.20.0) (2026-05-30)
+
+### Features
+
+* **navmesh:** name path-builder and navmesh-search class hierarchy ([#151](https://github.com/alandtse/CommonLibVR/issues/151)) ([d191aec](https://github.com/alandtse/CommonLibVR/commit/d191aec7babedbe62c37d1da938d2cf8ad188ae0))
+* **PlayerCharacter:** name VR layout, AE direct access, and VRPlayerHandData ([#152](https://github.com/alandtse/CommonLibVR/issues/152)) ([70d898a](https://github.com/alandtse/CommonLibVR/commit/70d898a31c1232f3de7bd45005883c98674376e6))
+
+### Bug Fixes
+
+* MagicTarget offsets ([#157](https://github.com/alandtse/CommonLibVR/issues/157)) ([2bedea6](https://github.com/alandtse/CommonLibVR/commit/2bedea60fe6db3e7bfde5b1488a506ece07dd8bd))
+* remove redundant hkMemoryRouter.cpp ([#156](https://github.com/alandtse/CommonLibVR/issues/156)) ([2091b97](https://github.com/alandtse/CommonLibVR/commit/2091b97620b6e9bc1402ca3e114f57146beab696))
+
 ## [4.19.0](https://github.com/alandtse/CommonLibVR/compare/v4.18.0...v4.19.0) (2026-05-29)
 
 ### Features
