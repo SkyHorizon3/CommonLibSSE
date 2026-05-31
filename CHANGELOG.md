@@ -1,3 +1,9 @@
+## [4.21.0](https://github.com/alandtse/CommonLibVR/compare/v4.20.0...v4.21.0) (2026-05-31)
+
+### Features
+
+* MessageBoxMenu API + LoadGameMissingContentCallBack ([#160](https://github.com/alandtse/CommonLibVR/issues/160)) ([bb2c5c0](https://github.com/alandtse/CommonLibVR/commit/bb2c5c0072811f4dd40b8fb172f7fe3d892b2730))
+
 ## [4.20.0](https://github.com/alandtse/CommonLibVR/compare/v4.19.0...v4.20.0) (2026-05-30)
 
 ### Features
