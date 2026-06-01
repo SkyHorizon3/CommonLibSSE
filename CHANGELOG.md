@@ -1,3 +1,9 @@
+## [4.21.1](https://github.com/alandtse/CommonLibVR/compare/v4.21.0...v4.21.1) (2026-06-01)
+
+### Bug Fixes
+
+* **vr:** niskindata and bsgeometry runtime layouts ([#162](https://github.com/alandtse/CommonLibVR/issues/162)) ([2f53553](https://github.com/alandtse/CommonLibVR/commit/2f535530072827b8e8961f853232bec6b219ecff))
+
 ## [4.21.0](https://github.com/alandtse/CommonLibVR/compare/v4.20.0...v4.21.0) (2026-05-31)
 
 ### Features
