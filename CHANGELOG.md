@@ -1,3 +1,9 @@
+## [4.22.0](https://github.com/alandtse/CommonLibVR/compare/v4.21.1...v4.22.0) (2026-06-03)
+
+### Features
+
+* **build:** publish prebuilt static-library bundles for xmake consumers ([#167](https://github.com/alandtse/CommonLibVR/issues/167)) ([32e1826](https://github.com/alandtse/CommonLibVR/commit/32e182628ad14d00d1f5a64d6ab6c9ede8be2e97))
+
 ## [4.21.1](https://github.com/alandtse/CommonLibVR/compare/v4.21.0...v4.21.1) (2026-06-01)
 
 ### Bug Fixes
