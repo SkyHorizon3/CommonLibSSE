@@ -1,3 +1,9 @@
+## [4.25.2](https://github.com/alandtse/CommonLibVR/compare/v4.25.1...v4.25.2) (2026-06-04)
+
+### Bug Fixes
+
+* allocate correct size in Create() ([#172](https://github.com/alandtse/CommonLibVR/issues/172)) ([e85f13b](https://github.com/alandtse/CommonLibVR/commit/e85f13b9a0655f5d24bc532c90dbd392a613a07a)), closes [#120](https://github.com/alandtse/CommonLibVR/issues/120)
+
 ## [4.25.1](https://github.com/alandtse/CommonLibVR/compare/v4.25.0...v4.25.1) (2026-06-04)
 
 ### Bug Fixes
