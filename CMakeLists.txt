@@ -63,18 +63,27 @@ if(COMMONLIB_PREBUILT_RESOLVED)
 		"${COMMONLIB_PREBUILT_RESOLVED}/include"
 		"${COMMONLIB_PREBUILT_RESOLVED}/extern/openvr/headers"
 	)
-	# Baked config: skyrim all (SE+AE+VR) + rex_ini + skse_xbyak; rex_json/toml off.
+	# Skyrim runtime set is layout-critical and required by the resolver, so define it
+	# unconditionally to match the lib.
 	target_compile_definitions(
 		"${PROJECT_NAME}" INTERFACE
 		WINVER=0x0601
 		_WIN32_WINNT=0x0601
-		REX_OPTION_INI=1
-		SKSE_SUPPORT_XBYAK=1
 		ENABLE_SKYRIM_SE=1
 		ENABLE_SKYRIM_AE=1
 		ENABLE_SKYRIM_VR=1
 		HAS_SKYRIM_MULTI_TARGETING=1
 	)
+	# rex_ini and skse_xbyak are additive — the lib bakes them (so the symbols are present to
+	# link) but they don't change layout, so only expose each (define it) when the consumer
+	# opts in. That way a consumer sees exactly the API it asked for and doesn't drag in the
+	# xbyak headers it isn't using.
+	if(REX_OPTION_INI)
+		target_compile_definitions("${PROJECT_NAME}" INTERFACE REX_OPTION_INI=1)
+	endif()
+	if(SKSE_SUPPORT_XBYAK)
+		target_compile_definitions("${PROJECT_NAME}" INTERFACE SKSE_SUPPORT_XBYAK=1)
+	endif()
 	if(MSVC)
 		target_compile_options(
 			"${PROJECT_NAME}" INTERFACE

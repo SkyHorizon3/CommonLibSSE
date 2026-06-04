@@ -53,10 +53,16 @@ function(commonlib_resolve_prebuilt out_dir)
         return()
     endif()
 
-    # options must match the config the bundle was baked with (skyrim all + rex_ini +
-    # skse_xbyak; rex_json/toml off) — otherwise the headers/lib would mismatch ABI.
-    if(NOT (ENABLE_SKYRIM_SE AND ENABLE_SKYRIM_AE AND ENABLE_SKYRIM_VR
-            AND REX_OPTION_INI AND SKSE_SUPPORT_XBYAK)
+    # Only the skyrim runtime set is truly ABI-critical: ENABLE_SKYRIM_SE/AE/VR change the
+    # layout of dozens of public headers, so a consumer must build for all three (as the lib
+    # does). The baked extras are additive and the lib is a superset of them:
+    #   * rex_ini  — adds a self-contained REX::INI namespace (one header)
+    #   * skse_xbyak — adds an #if'd ContextHook block + one non-virtual Trampoline method
+    #                  declaration (no data member → class layout is identical either way)
+    # so a consumer may leave either off and still link cleanly. rex_json/toml are additive
+    # too but baked OFF, so the lib LACKS those symbols — a consumer enabling them would fail
+    # to link and must keep them off.
+    if(NOT (ENABLE_SKYRIM_SE AND ENABLE_SKYRIM_AE AND ENABLE_SKYRIM_VR)
        OR REX_OPTION_JSON OR REX_OPTION_TOML)
         return()
     endif()
@@ -65,6 +71,12 @@ function(commonlib_resolve_prebuilt out_dir)
     if(NOT Git_FOUND)
         return()
     endif()
+    # actions/checkout fetches submodules shallow and without tags, so describe can't see the
+    # release tag in CI; pull tags best-effort first (depth 1, ~fast). Still uses --exact-match,
+    # so a non-tag commit safely falls back to a source build.
+    execute_process(
+        COMMAND "${GIT_EXECUTABLE}" -C "${CMAKE_CURRENT_SOURCE_DIR}" fetch --tags --depth=1 origin
+        RESULT_VARIABLE _ignore ERROR_QUIET OUTPUT_QUIET)
     execute_process(
         COMMAND "${GIT_EXECUTABLE}" -C "${CMAKE_CURRENT_SOURCE_DIR}" describe --tags --exact-match --dirty
         OUTPUT_VARIABLE _tag OUTPUT_STRIP_TRAILING_WHITESPACE
