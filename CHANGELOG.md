@@ -1,3 +1,9 @@
+## [4.25.1](https://github.com/alandtse/CommonLibVR/compare/v4.25.0...v4.25.1) (2026-06-04)
+
+### Bug Fixes
+
+* **prebuilt:** auto-fetch in CI; relax options gate ([#171](https://github.com/alandtse/CommonLibVR/issues/171)) ([a988eaa](https://github.com/alandtse/CommonLibVR/commit/a988eaac26746c93f19df2bb0bfd7736a6d6d6d5))
+
 ## [4.25.0](https://github.com/alandtse/CommonLibVR/compare/v4.24.0...v4.25.0) (2026-06-04)
 
 ### Features
