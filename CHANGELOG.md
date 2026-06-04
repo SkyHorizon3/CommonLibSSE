@@ -1,3 +1,9 @@
+## [4.25.0](https://github.com/alandtse/CommonLibVR/compare/v4.24.0...v4.25.0) (2026-06-04)
+
+### Features
+
+* add hkpProcessCollisionInput + hkpAgent3ProcessInput ([#165](https://github.com/alandtse/CommonLibVR/issues/165)) ([5da20d8](https://github.com/alandtse/CommonLibVR/commit/5da20d8e70d8222f299d802fffae02f772646a55))
+
 ## [4.24.0](https://github.com/alandtse/CommonLibVR/compare/v4.23.0...v4.24.0) (2026-06-04)
 
 ### Features
