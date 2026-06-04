@@ -1,3 +1,9 @@
+## [4.24.0](https://github.com/alandtse/CommonLibVR/compare/v4.23.0...v4.24.0) (2026-06-04)
+
+### Features
+
+* **build:** auto-fetch prebuilt CommonLib on clean release tags (cmake) ([#170](https://github.com/alandtse/CommonLibVR/issues/170)) ([47c49c2](https://github.com/alandtse/CommonLibVR/commit/47c49c20570017f51abd698fd6171b18fedfd3e1)), closes [#169](https://github.com/alandtse/CommonLibVR/issues/169)
+
 ## [4.23.0](https://github.com/alandtse/CommonLibVR/compare/v4.22.0...v4.23.0) (2026-06-04)
 
 ### Features
