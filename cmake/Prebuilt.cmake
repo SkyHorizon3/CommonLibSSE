@@ -33,10 +33,24 @@ function(commonlib_resolve_prebuilt out_dir)
         return()
     endif()
 
-    # The bundle is baked Release (/MD, NDEBUG). Linking it from a Debug config (/MDd) is a
-    # CRT/ABI mismatch, and a multi-config generator can't promise the chosen config at
-    # configure time — so only use the prebuilt for a single-config, non-Debug build.
-    if(CMAKE_CONFIGURATION_TYPES OR NOT CMAKE_BUILD_TYPE MATCHES "^(Release|RelWithDebInfo|MinSizeRel)$")
+    # The bundle is Release (/MD); a Debug (/MDd) link is a CRT mismatch. Single-config must be
+    # non-Debug; a multi-config generator picks the config at build time, so it's skipped unless
+    # the consumer promises release-only via COMMONLIB_PREBUILT_MULTICONFIG.
+    if(CMAKE_CONFIGURATION_TYPES)
+        if(NOT COMMONLIB_PREBUILT_MULTICONFIG)
+            return()
+        endif()
+    elseif(NOT CMAKE_BUILD_TYPE MATCHES "^(Release|RelWithDebInfo|MinSizeRel)$")
+        return()
+    endif()
+
+    # The bundle is the Release dynamic CRT (/MD). A static CRT (/MT) or the Debug dynamic CRT
+    # (/MDd) is a mismatch (→ LNK4098), so fall back to source. Accept any DLL runtime except the
+    # always-Debug literal — not a plain STREQUAL "MultiThreadedDLL", since the standard /MD value
+    # is the Debug-conditional genex "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL". Unset = /MD default.
+    if(DEFINED CMAKE_MSVC_RUNTIME_LIBRARY
+       AND (NOT "${CMAKE_MSVC_RUNTIME_LIBRARY}" MATCHES "DLL"
+            OR "${CMAKE_MSVC_RUNTIME_LIBRARY}" STREQUAL "MultiThreadedDebugDLL"))
         return()
     endif()
 
@@ -53,17 +67,10 @@ function(commonlib_resolve_prebuilt out_dir)
         return()
     endif()
 
-    # Only the skyrim runtime set is truly ABI-critical: ENABLE_SKYRIM_SE/AE/VR change the
-    # layout of dozens of public headers, so a consumer must build for all three (as the lib
-    # does). The baked extras are additive and the lib is a superset of them:
-    #   * rex_ini  — adds a self-contained REX::INI namespace (one header)
-    #   * skse_xbyak — adds an #if'd ContextHook block + one non-virtual Trampoline method
-    #                  declaration (no data member → class layout is identical either way)
-    # so a consumer may leave either off and still link cleanly. rex_json/toml are additive
-    # too but baked OFF, so the lib LACKS those symbols — a consumer enabling them would fail
-    # to link and must keep them off.
-    if(NOT (ENABLE_SKYRIM_SE AND ENABLE_SKYRIM_AE AND ENABLE_SKYRIM_VR)
-       OR REX_OPTION_JSON OR REX_OPTION_TOML)
+    # Only the skyrim runtime set is ABI-critical (it changes public-header layout). The lib
+    # bakes every REX config + xbyak as additive supersets — and their json/toml parsers live in
+    # the lib, not the headers — so a consumer may enable any subset with no extra dependency.
+    if(NOT (ENABLE_SKYRIM_SE AND ENABLE_SKYRIM_AE AND ENABLE_SKYRIM_VR))
         return()
     endif()
 
