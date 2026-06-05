@@ -1,3 +1,9 @@
+## [4.26.0](https://github.com/alandtse/CommonLibVR/compare/v4.25.2...v4.26.0) (2026-06-05)
+
+### Features
+
+* **prebuilt:** superset, multi-config, CRT guard ([#174](https://github.com/alandtse/CommonLibVR/issues/174)) ([66f257a](https://github.com/alandtse/CommonLibVR/commit/66f257a44ba4041871730803ef8df4d8fe905932)), closes [#173](https://github.com/alandtse/CommonLibVR/issues/173) [#173](https://github.com/alandtse/CommonLibVR/issues/173) [open-shaders#103](https://github.com/alandtse/open-shaders/issues/103) [EngineFixesSkyrim64#10](https://github.com/alandtse/EngineFixesSkyrim64/issues/10)
+
 ## [4.25.2](https://github.com/alandtse/CommonLibVR/compare/v4.25.1...v4.25.2) (2026-06-04)
 
 ### Bug Fixes
