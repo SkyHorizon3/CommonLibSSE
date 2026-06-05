@@ -1,3 +1,9 @@
+## [4.26.1](https://github.com/alandtse/CommonLibVR/compare/v4.26.0...v4.26.1) (2026-06-05)
+
+### Bug Fixes
+
+* **prebuilt:** support multi-config generators ([#175](https://github.com/alandtse/CommonLibVR/issues/175)) ([3b7207a](https://github.com/alandtse/CommonLibVR/commit/3b7207a02f250cecdebbcac8c31292ff00c6c0e7))
+
 ## [4.26.0](https://github.com/alandtse/CommonLibVR/compare/v4.25.2...v4.26.0) (2026-06-05)
 
 ### Features
