@@ -1,3 +1,10 @@
+## [4.26.2](https://github.com/alandtse/CommonLibVR/compare/v4.26.1...v4.26.2) (2026-06-06)
+
+### Bug Fixes
+
+* MenuEventHandler VR vtable shift ([#177](https://github.com/alandtse/CommonLibVR/issues/177)) ([6b48ca9](https://github.com/alandtse/CommonLibVR/commit/6b48ca992424b3fa9b1a8c61758244da531b6ed1))
+* remove phantom ISGraphicsTextureFilterMode IS effect ([#178](https://github.com/alandtse/CommonLibVR/issues/178)) ([5126c68](https://github.com/alandtse/CommonLibVR/commit/5126c68e8610b1b24a6a4ca092912e4b0afebf17))
+
 ## [4.26.1](https://github.com/alandtse/CommonLibVR/compare/v4.26.0...v4.26.1) (2026-06-05)
 
 ### Bug Fixes
