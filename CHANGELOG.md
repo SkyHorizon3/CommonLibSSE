@@ -1,3 +1,13 @@
+## [4.28.0](https://github.com/alandtse/CommonLibVR/compare/v4.27.0...v4.28.0) (2026-06-14)
+
+### Features
+
+* type discovered struct fields from Ghidra ([#184](https://github.com/alandtse/CommonLibVR/issues/184)) ([9813abe](https://github.com/alandtse/CommonLibVR/commit/9813abefd0c003e761940f74a01e8055adf97e30))
+
+### Bug Fixes
+
+* resolve packed enum IDs per-runtime ([#179](https://github.com/alandtse/CommonLibVR/issues/179)) ([fa60781](https://github.com/alandtse/CommonLibVR/commit/fa60781748569344fab2f51de1dd43ff71a28b3e))
+
 ## [4.27.0](https://github.com/alandtse/CommonLibVR/compare/v4.26.2...v4.27.0) (2026-06-12)
 
 ### Features
