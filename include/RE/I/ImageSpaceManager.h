@@ -198,7 +198,18 @@ namespace RE
 	X2(ISLvl0PreTest, INVALID_INDEX, 143)                         /* BSImagespaceShaderLvl0PreTest */                           \
 	X2(ISSetupPreTest, INVALID_INDEX, 144)                        /* BSImagespaceShaderSetupPreTest */
 
-#define MakeImageSpaceID(se, vr) (se | (vr << 8))
+// IDs pack SE (low byte) + VR (high byte). Single-runtime builds resolve to the concrete
+// runtime index (so the enum value matches the binary, which the id discovery relies on);
+// SKYRIM_CROSS_VR keeps the packed form for GetCurrentIndex(). NOTE: in a single-runtime
+// build every effect absent from that runtime collapses to INVALID_INDEX, so name lookup
+// uses an if-chain rather than a switch (duplicate case labels are an error).
+#if defined(SKYRIM_CROSS_VR)
+#	define MakeImageSpaceID(se, vr) (se | (vr << 8))
+#elif defined(EXCLUSIVE_SKYRIM_VR)
+#	define MakeImageSpaceID(se, vr) (vr)
+#else
+#	define MakeImageSpaceID(se, vr) (se)
+#endif
 		static constexpr std::uint16_t INVALID_INDEX = 255;
 
 		static constexpr std::uint16_t TOTAL_SE_EFFECTS = 159;
@@ -213,7 +224,7 @@ namespace RE
 		 * rendering pipeline. Values are packed to support both SE/AE and VR indices.
 		 * Use GetSEIndex() and GetVRIndex() to extract runtime-specific indices.
 		 */
-		enum ImageSpaceEffectEnum
+		enum ImageSpaceEffectEnum : std::int32_t
 		{
 			IMAGE_SPACE_EFFECTS
 				Total = TOTAL_SE_EFFECTS,
@@ -223,23 +234,33 @@ namespace RE
 #undef X2
 
 		/**
-		 * @brief Extracts the Skyrim Special Edition index from a packed effect ID.
-		 * @param a_effect The packed effect enum value.
-		 * @return The SE index (lower 8 bits).
+		 * @brief Gets the Skyrim Special Edition index for an effect ID.
+		 * @return The SE index, or INVALID_INDEX in a VR-only build.
 		 */
-		[[nodiscard]] static constexpr std::uint16_t GetSEIndex(ImageSpaceEffectEnum a_effect) noexcept
+		[[nodiscard]] static constexpr std::uint16_t GetSEIndex([[maybe_unused]] ImageSpaceEffectEnum a_effect) noexcept
 		{
+#if defined(SKYRIM_CROSS_VR)
 			return static_cast<std::uint16_t>(a_effect & 0xFF);
+#elif defined(EXCLUSIVE_SKYRIM_VR)
+			return INVALID_INDEX;                         // SE index is not encoded in a VR-only build
+#else
+			return static_cast<std::uint16_t>(a_effect);  // id is already the SE/AE index
+#endif
 		}
 
 		/**
-		 * @brief Extracts the Skyrim VR index from a packed effect ID.
-		 * @param a_effect The packed effect enum value.
-		 * @return The VR index (upper 8 bits).
+		 * @brief Gets the Skyrim VR index for an effect ID.
+		 * @return The VR index, or INVALID_INDEX in a non-VR build.
 		 */
-		[[nodiscard]] static constexpr std::uint16_t GetVRIndex(ImageSpaceEffectEnum a_effect) noexcept
+		[[nodiscard]] static constexpr std::uint16_t GetVRIndex([[maybe_unused]] ImageSpaceEffectEnum a_effect) noexcept
 		{
+#if defined(SKYRIM_CROSS_VR)
 			return static_cast<std::uint16_t>((a_effect >> 8) & 0xFF);
+#elif defined(EXCLUSIVE_SKYRIM_VR)
+			return static_cast<std::uint16_t>(a_effect);  // id is already the VR index
+#else
+			return INVALID_INDEX;                         // VR index is not encoded in a non-VR build
+#endif
 		}
 
 		/**
@@ -268,17 +289,17 @@ namespace RE
 		 */
 		[[nodiscard]] static std::string GetImageSpaceEffectName(ImageSpaceEffectEnum a_effect)
 		{
-#define X(name, index)                   \
-	case MakeImageSpaceID(index, index): \
+#define X(name, index)      \
+	if (a_effect == (name)) \
 		return #name;
-#define X2(name, se, vr)           \
-	case MakeImageSpaceID(se, vr): \
+#define X2(name, se, vr)    \
+	if (a_effect == (name)) \
 		return #name;
-			switch (a_effect) {
-				IMAGE_SPACE_EFFECTS
-			default:
-				return "Unknown";
-			}
+			// if-chain (not switch): single-runtime builds collapse every cross-runtime
+			// effect to INVALID_INDEX; duplicate switch cases are an error, duplicate
+			// if-conditions are not. Present effects have unique values (first match wins).
+			IMAGE_SPACE_EFFECTS
+			return "Unknown";
 #undef X
 #undef X2
 		}
