@@ -1,3 +1,10 @@
+## [4.29.0](https://github.com/alandtse/CommonLibVR/compare/v4.28.0...v4.29.0) (2026-06-17)
+
+### Features
+
+* **playercharacter:** add UsePoisonFromInventory ([#186](https://github.com/alandtse/CommonLibVR/issues/186)) ([3a2b0e5](https://github.com/alandtse/CommonLibVR/commit/3a2b0e5f2d91183fc0d659852b5d8b5ba35ec83b))
+* **re:** add ShadowSceneNode::ResetScene ([#185](https://github.com/alandtse/CommonLibVR/issues/185)) ([c4ce876](https://github.com/alandtse/CommonLibVR/commit/c4ce8760be5037ce931f2000451d448039138dc0))
+
 ## [4.28.0](https://github.com/alandtse/CommonLibVR/compare/v4.27.0...v4.28.0) (2026-06-14)
 
 ### Features
