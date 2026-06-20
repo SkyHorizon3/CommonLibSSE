@@ -1,3 +1,9 @@
+## [4.31.0](https://github.com/alandtse/CommonLibVR/compare/v4.30.0...v4.31.0) (2026-06-20)
+
+### Features
+
+* **vr:** type BSOpenVRControllerDevice controller state ([#190](https://github.com/alandtse/CommonLibVR/issues/190)) ([1864851](https://github.com/alandtse/CommonLibVR/commit/1864851eafd11d4f829fb8666640806c647a4253))
+
 ## [4.30.0](https://github.com/alandtse/CommonLibVR/compare/v4.29.0...v4.30.0) (2026-06-20)
 
 ### Features
