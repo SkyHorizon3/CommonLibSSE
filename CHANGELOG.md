@@ -1,3 +1,9 @@
+## [4.30.0](https://github.com/alandtse/CommonLibVR/compare/v4.29.0...v4.30.0) (2026-06-20)
+
+### Features
+
+* add BSIStream with DecompressLipData ([#188](https://github.com/alandtse/CommonLibVR/issues/188)) ([9609035](https://github.com/alandtse/CommonLibVR/commit/96090356bf15751e819e5adcf78f3f8b4ed06cec))
+
 ## [4.29.0](https://github.com/alandtse/CommonLibVR/compare/v4.28.0...v4.29.0) (2026-06-17)
 
 ### Features
