@@ -124,16 +124,17 @@ namespace RE
 
 		static PlayerCamera* GetSingleton();
 
-		bool ForceFirstPerson();
-		bool ForceThirdPerson();
-		bool IsInBleedoutMode() const;
-		bool IsInFirstPerson() const;
-		bool IsInFreeCameraMode() const;
-		bool IsInThirdPerson() const;
-		void PushCameraState(CameraState a_state);
-		void ToggleFreeCameraMode(bool a_freezeTime);
-		void Update();
-		void UpdateThirdPerson(bool a_weaponDrawn);
+		bool                          ForceFirstPerson();
+		bool                          ForceThirdPerson();
+		[[nodiscard]] static NiPoint3 GetActiveCameraPosition();
+		bool                          IsInBleedoutMode() const;
+		bool                          IsInFirstPerson() const;
+		bool                          IsInFreeCameraMode() const;
+		bool                          IsInThirdPerson() const;
+		void                          PushCameraState(CameraState a_state);
+		void                          ToggleFreeCameraMode(bool a_freezeTime);
+		void                          Update();
+		void                          UpdateThirdPerson(bool a_weaponDrawn);
 
 		RUNTIME_DATA_ACCESSOR(RUNTIME_DATA, 0x40, 0);
 
