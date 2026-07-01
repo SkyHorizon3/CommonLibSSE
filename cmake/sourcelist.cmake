@@ -24,6 +24,7 @@ set(SOURCES
 	include/RE/A/ActorMagicCaster.h
 	include/RE/A/ActorMover.h
 	include/RE/A/ActorPackage.h
+	include/RE/A/ActorPackageData.h
 	include/RE/A/ActorSpeedChannel.h
 	include/RE/A/ActorState.h
 	include/RE/A/ActorTargetCheck.h
@@ -1321,6 +1322,7 @@ set(SOURCES
 	include/RE/I/IPathBuilder.h
 	include/RE/I/IPathBuilderTracker.h
 	include/RE/I/IPostAnimationChannelUpdateFunctor.h
+	include/RE/I/IProcedureTreeExecState.h
 	include/RE/I/IProcedureTreeItem.h
 	include/RE/I/IProfilePolicy.h
 	include/RE/I/ISavePatcherInterface.h
