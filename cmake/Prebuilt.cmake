@@ -23,6 +23,37 @@ function(_commonlib_prebuilt_complete dir out_var)
     endif()
 endfunction()
 
+# A CRT/config match doesn't guarantee the bundle links: MSVC STL internal dispatch helpers
+# (e.g. __std_replace_copy_2) aren't part of the stable ABI, so a toolset mismatch in either
+# direction can LNK2001 at final link. Requires matching major.minor against TOOLSET_VERSION.txt
+# (a bundle/compiler predating this stamp is treated as compatible); CMAKE_CXX_COMPILER_ID, not
+# MSVC, since MSVC is also TRUE for clang-cl, whose version isn't the cl.exe one being compared.
+function(_commonlib_prebuilt_toolset_compatible dir out_var)
+    set(${out_var} TRUE PARENT_SCOPE)
+    if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" OR NOT CMAKE_CXX_COMPILER_VERSION)
+        return()
+    endif()
+    set(_stamp "${dir}/TOOLSET_VERSION.txt")
+    if(NOT EXISTS "${_stamp}")
+        return()
+    endif()
+    file(READ "${_stamp}" _producer_version)
+    string(STRIP "${_producer_version}" _producer_version)
+    if(NOT _producer_version MATCHES "^[0-9]+\\.[0-9]+(\\.[0-9]+)*$")
+        return()
+    endif()
+    string(REGEX MATCH "^([0-9]+)\\.([0-9]+)" _ignore "${_producer_version}")
+    set(_producer_majmin "${CMAKE_MATCH_1}.${CMAKE_MATCH_2}")
+    string(REGEX MATCH "^([0-9]+)\\.([0-9]+)" _ignore "${CMAKE_CXX_COMPILER_VERSION}")
+    set(_consumer_majmin "${CMAKE_MATCH_1}.${CMAKE_MATCH_2}")
+    if(NOT _consumer_majmin STREQUAL _producer_majmin)
+        set(${out_var} FALSE PARENT_SCOPE)
+        message(STATUS "CommonLibSSE prebuilt bundle was built with a different MSVC toolset "
+                        "(${_producer_version}) than this one (${CMAKE_CXX_COMPILER_VERSION}) "
+                        "- building from source instead of risking an unresolved-STL-symbol link.")
+    endif()
+endfunction()
+
 function(commonlib_resolve_prebuilt out_dir)
     set(${out_dir} "" PARENT_SCOPE)
 
@@ -54,11 +85,16 @@ function(commonlib_resolve_prebuilt out_dir)
         return()
     endif()
 
-    # explicit override: a consumer (or this repo's self-test) points at an extracted bundle
+    # explicit override: a consumer (or this repo's self-test) points at an extracted bundle.
+    # Incomplete falls through to auto-fetch (existing behavior); toolset-incompatible returns
+    # empty instead, so it doesn't silently auto-fetch an unrelated tag.
     if(COMMONLIB_PREBUILT_DIR)
         _commonlib_prebuilt_complete("${COMMONLIB_PREBUILT_DIR}" _ok)
         if(_ok)
-            set(${out_dir} "${COMMONLIB_PREBUILT_DIR}" PARENT_SCOPE)
+            _commonlib_prebuilt_toolset_compatible("${COMMONLIB_PREBUILT_DIR}" _toolset_ok)
+            if(_toolset_ok)
+                set(${out_dir} "${COMMONLIB_PREBUILT_DIR}" PARENT_SCOPE)
+            endif()
             return()
         endif()
     endif()
@@ -95,7 +131,12 @@ function(commonlib_resolve_prebuilt out_dir)
     set(_cache "${CMAKE_CURRENT_BINARY_DIR}/.prebuilt/${_tag}")
     _commonlib_prebuilt_complete("${_cache}" _ok)
     if(_ok)
-        set(${out_dir} "${_cache}" PARENT_SCOPE)
+        # No .failed marker for toolset incompatibility: completeness always wins on a later
+        # run, so a marker here would never be read, and this lets a toolset upgrade retry free.
+        _commonlib_prebuilt_toolset_compatible("${_cache}" _toolset_ok)
+        if(_toolset_ok)
+            set(${out_dir} "${_cache}" PARENT_SCOPE)
+        endif()
         return()
     endif()
     if(EXISTS "${_cache}/.failed")
@@ -135,6 +176,12 @@ function(commonlib_resolve_prebuilt out_dir)
     if(NOT _ok)
         file(MAKE_DIRECTORY "${_cache}")
         file(TOUCH "${_cache}/.failed")
+        return()
+    endif()
+    # No .failed marker on toolset incompatibility here either — see the cached-bundle
+    # short-circuit above for why it would never be read back.
+    _commonlib_prebuilt_toolset_compatible("${_cache}" _toolset_ok)
+    if(NOT _toolset_ok)
         return()
     endif()
     set(${out_dir} "${_cache}" PARENT_SCOPE)
