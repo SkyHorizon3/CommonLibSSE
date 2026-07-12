@@ -1,3 +1,5 @@
+## [4.36.5](https://github.com/alandtse/CommonLibVR/compare/v4.36.4...v4.36.5) (2026-07-12)
+
 ## [4.36.4](https://github.com/alandtse/CommonLibVR/compare/v4.36.3...v4.36.4) (2026-07-12)
 
 ## [4.36.3](https://github.com/alandtse/CommonLibVR/compare/v4.36.2...v4.36.3) (2026-07-11)
