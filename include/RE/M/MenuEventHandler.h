@@ -28,6 +28,14 @@ namespace RE
 		// ProcessKinect/Thumbstick/MouseMove/Button from slots 02-05 down to 05-08. The
 		// MenuControls dispatcher routes INPUT_EVENT_TYPE::kVrTouchpadSwipe (7) -> slot 02 and
 		// kVrTouchpadPosition (6) -> slot 03; slot 04 is not routed by MenuControls.
+		//
+		// The 3 VR-only slots have no flat-layout counterpart at all (flat's vtable goes straight
+		// from CanProcess(01) to ProcessKinect(02)), so unlike the 4 shifting methods below they
+		// can't be RelocateVirtual'd with a real SE/AE index. In SKYRIM_CROSS_VR they're exposed as
+		// runtime-guarded accessors instead (IsVR() check first, matching GetVRTouchpadData() in
+		// BSInputEventQueue.h and GetVRControllerRight() in BSInputDeviceManager.cpp) rather than a
+		// RelocateVirtual wrapper -- same "check IsVR(), no-op on flat" idiom used throughout this
+		// codebase for VR-exclusive data, just applied to a function instead of a member.
 #if defined(EXCLUSIVE_SKYRIM_VR)
 		virtual bool ProcessVrWandTouchpadSwipe(VrWandTouchpadSwipeEvent* a_event);        // VR 02 - { return false; }
 		virtual bool ProcessVrWandTouchpadPosition(VrWandTouchpadPositionEvent* a_event);  // VR 03 - { return false; }
@@ -60,6 +68,35 @@ namespace RE
 		bool ProcessButton(ButtonEvent* a_event)
 		{
 			return REL::RelocateVirtual<decltype(&MenuEventHandler::ProcessButton)>(0x05, 0x08, this, a_event);
+		}
+
+		// VR-only slots (no flat counterpart to relocate to): no-op on flat, dispatch to the real
+		// VR vtable slot only when actually running as VR. The repeated index passed as the SE/AE
+		// slot is a dead placeholder, not a real flat-layout value -- RelocateVirtual is unreachable
+		// on flat because of the IsVR() guard above it.
+		bool ProcessVrWandTouchpadSwipe(VrWandTouchpadSwipeEvent* a_event)
+		{
+			if SKYRIM_REL_VR_CONSTEXPR (!REL::Module::IsVR()) {
+				return false;
+			} else {
+				return REL::RelocateVirtual<bool(MenuEventHandler*, VrWandTouchpadSwipeEvent*)>(0x02, 0x02, this, a_event);
+			}
+		}
+		bool ProcessVrWandTouchpadPosition(VrWandTouchpadPositionEvent* a_event)
+		{
+			if SKYRIM_REL_VR_CONSTEXPR (!REL::Module::IsVR()) {
+				return false;
+			} else {
+				return REL::RelocateVirtual<bool(MenuEventHandler*, VrWandTouchpadPositionEvent*)>(0x03, 0x03, this, a_event);
+			}
+		}
+		bool Unk_04(void* a_event)
+		{
+			if SKYRIM_REL_VR_CONSTEXPR (!REL::Module::IsVR()) {
+				return false;
+			} else {
+				return REL::RelocateVirtual<bool(MenuEventHandler*, void*)>(0x04, 0x04, this, a_event);
+			}
 		}
 #endif
 
