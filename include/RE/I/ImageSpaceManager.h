@@ -312,6 +312,31 @@ namespace RE
 			bool                            taaEnabled;                            // 18
 		};
 
+		// Real type of the field misnamed BSImagespaceShaderISSAOBlurH below (all three
+		// runtimes; the feeding allocation is 0x70 bytes, not sizeof(BSImagespaceShader)
+		// == 0x1A8). Holds pointers to the rest of the SAO effect chain plus SAO/DOF
+		// Display-menu ini defaults, incl. bSAOEnable:Display into enableSAO.
+		struct SAOEffectParams
+		{
+			ImageSpaceEffect* blurH;            // 00 - ISSAOBlurH (self)
+			ImageSpaceEffect* blurV;            // 08 - ISSAOBlurV
+			ImageSpaceEffect* cameraZ;          // 10 - ISSAOCameraZ
+			ImageSpaceEffect* compositeSAO;     // 18 - ISSAOCompositeSAO
+			ImageSpaceEffect* compositeFog;     // 20 - ISSAOCompositeFog
+			ImageSpaceEffect* compositeSAOFog;  // 28 - ISSAOCompositeSAOFog
+			ImageSpaceEffect* minify;           // 30 - ISMinify
+			ImageSpaceEffect* minifyContrast;   // 38 - ISMinifyContrast
+			ImageSpaceEffect* rawAO;            // 40 - ISSAORawAO
+			ImageSpaceEffect* rawAONoTemporal;  // 48 - ISSAORawAONoTemporal
+			bool              enableSAO;        // 50 - from bSAOEnable:Display (low byte of an 8-byte slot)
+			std::uint8_t      pad51[3];         // 51
+			std::uint32_t     unk54;            // 54 - always 0 at construction
+			std::uint64_t     unk58;            // 58 - always 0 at construction
+			std::uint64_t     unk60;            // 60 - always 0 at construction
+			std::uint64_t     unk68;            // 68 - always 0 at construction
+		};
+		static_assert(sizeof(SAOEffectParams) == 0x70);
+
 		struct RUNTIME_DATA
 		{
 #define RUNTIME_DATA_CONTENT                                                                                                                                                                     \
@@ -343,7 +368,7 @@ namespace RE
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISLightingComposite;           /* 1B0, VR 1D0 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISPerlinNoiseCS;               /* 1B8, VR 1D8 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderReflectionsRayTracing;         /* 1C0, VR 1E8 */                                                                                       \
-	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSAOBlurH;                    /* 1C8, VR 1F0 */                                                                                       \
+	SAOEffectParams*                    BSImagespaceShaderISSAOBlurH;                    /* 1C8, VR 1F0 -- see SAOEffectParams doc comment */                                                    \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSAOBlurHCS;                  /* 1D0, VR 1F8 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSILComposite;                /* 1D8, VR 200 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSimpleColor;                 /* 1E0, VR 208 */                                                                                       \
@@ -395,7 +420,7 @@ namespace RE
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISPerlinNoiseCS;                       /* 1B8, VR 1D8 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderTransformLvl7PreTest;                  /* VR 1E0 */                                                                                            \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderReflectionsRayTracing;                 /* 1C0, VR 1E8 */                                                                                       \
-	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSAOBlurH;                            /* 1C8, VR 1F0 */                                                                                       \
+	SAOEffectParams*                    BSImagespaceShaderISSAOBlurH;                            /* 1C8, VR 1F0 -- see SAOEffectParams doc comment above */                                              \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSAOBlurHCS;                          /* 1D0, VR 1F8 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSILComposite;                        /* 1D8, VR 200 */                                                                                       \
 	NiPointer<BSImagespaceShader>       BSImagespaceShaderISSimpleColor;                         /* 1E0, VR 208 */                                                                                       \
