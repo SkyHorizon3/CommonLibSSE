@@ -187,7 +187,7 @@ namespace RE
 
 		~BSTObjectArena()
 		{
-			const auto del = [this](Page*& a_page) -> void {
+			const auto del = [](Page*& a_page) -> void {
 				while (a_page != nullptr) {
 					auto* next = a_page->next;
 					allocator_type::deallocate_bytes(a_page);
@@ -207,13 +207,13 @@ namespace RE
 
 		[[nodiscard]] constexpr reference operator[](size_type a_pos) noexcept
 		{
-			assert(a_pos < size());
+			assert(a_pos < size() && a_pos < N);
 			return data()[a_pos];
 		}
 
 		[[nodiscard]] constexpr const_reference operator[](size_type a_pos) const noexcept
 		{
-			assert(a_pos < size());
+			assert(a_pos < size() && a_pos < N);
 			return data()[a_pos];
 		}
 
@@ -266,8 +266,8 @@ namespace RE
 			assert(empty());
 		}
 
-		iterator push_back(const value_type& a_value) { return emplace(a_value); }
-		iterator push_back(value_type&& a_value) { return emplace(std::move(a_value)); }
+		iterator push_back(const value_type& a_value) { return emplace_back(a_value); }
+		iterator push_back(value_type&& a_value) { return emplace_back(std::move(a_value)); }
 
 		template <class... Args>
 		iterator emplace_back(Args&&... a_args)

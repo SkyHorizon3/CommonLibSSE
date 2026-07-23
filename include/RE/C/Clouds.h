@@ -37,7 +37,7 @@ namespace RE
 		bool                  forceUpdate;                 // 512
 		bool                  unk513;                      // 513
 		std::uint32_t         pad514;                      // 514
-		TESWeather*           lastWeather;                 // 520
+		TESWeather*           lastWeather;                 // 518
 	};
 	static_assert(sizeof(Clouds) == 0x520);
 }
