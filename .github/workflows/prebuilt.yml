@@ -43,6 +43,11 @@ on:
 permissions:
   contents: read
 
+# Cancel a PR's in-flight run when it's superseded by a new push.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   xmake:
     name: xmake bundle + self-test

@@ -16,6 +16,12 @@ on:
     branches: [ vr, ng, feature/* ]
   workflow_dispatch:
 
+# Cancel a PR's in-flight run when it's superseded by a new push -- the 20-job matrix
+# otherwise keeps occupying runner slots for a commit nobody cares about anymore.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-test-vcpkg:
     runs-on: windows-latest
@@ -139,6 +145,7 @@ jobs:
         with:
           cmakeListsTxtPath: ${{ github.workspace }}/main/CMakeLists.txt
           configurePreset: build-${{ matrix.build-type }}-${{ matrix.compiler }}-vcpkg-${{ matrix.runtime }}
+          configurePresetAdditionalArgs: "['-DCOMMONLIB_ENABLE_IPO=OFF']"
           buildPreset: ${{ matrix.build-type }}-${{ matrix.compiler }}-vcpkg-${{ matrix.runtime }}
 
       - name: Unit tests
