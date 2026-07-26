@@ -4,8 +4,30 @@
 
 #include "REX/W32/KERNEL32.h"
 
+// Only the CMake build defines this (tied to PROJECT_VERSION, kept in sync with releases
+// by the semantic-release replace-plugin); xmake has no equivalent version tracking, so
+// fall back rather than fail to compile there.
+#ifndef COMMONLIB_VERSION
+#	define COMMONLIB_VERSION "unknown"
+#endif
+
 namespace REL
 {
+	namespace
+	{
+		// Emitted once per linked module (each plugin DLL statically links its own copy of
+		// REL::Module) via OutputDebugString rather than left as an inert string literal --
+		// MSVC's /Gy + /OPT:REF would otherwise strip an unreferenced constant from a Release
+		// build. Every consumer that binds any RELOCATION_ID pulls this translation unit in,
+		// so this notice reaches any plugin statically linking CommonLibSSE-NG.
+		constexpr const char* kLicenseNotice =
+			"CommonLibSSE-NG " COMMONLIB_VERSION
+			" (statically linked) is licensed under GPL-3.0-or-later with a Modding Exception. "
+			"Source: https://github.com/alandtse/CommonLibSSE-NG";
+	}
+
+	Module::Module() noexcept { REX::W32::OutputDebugStringA(kLicenseNotice); }
+
 	Module Module::_instance;
 
 	void Module::load_segments()
