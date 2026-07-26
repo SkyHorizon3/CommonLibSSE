@@ -1,3 +1,5 @@
+## [5.0.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v4.39.3...v5.0.0) (2026-07-26)
+
 ## [4.39.3](https://github.com/alandtse/CommonLibVR/compare/v4.39.2...v4.39.3) (2026-07-24)
 
 ## [4.39.2](https://github.com/alandtse/CommonLibVR/compare/v4.39.1...v4.39.2) (2026-07-22)
