@@ -1,3 +1,5 @@
+## [5.4.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v5.3.0...v5.4.0) (2026-07-28)
+
 ## [5.3.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v5.2.0...v5.3.0) (2026-07-28)
 
 ## [5.2.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v5.1.1...v5.2.0) (2026-07-28)
