@@ -539,6 +539,7 @@ set(SOURCES
 	include/RE/C/Calendar.h
 	include/RE/C/CalibrationOptionMenu.h
 	include/RE/C/CalmEffect.h
+	include/RE/C/ChainExplosion.h
 	include/RE/C/CharEvent.h
 	include/RE/C/Character.h
 	include/RE/C/ChestsLooted.h
@@ -2143,6 +2144,7 @@ set(SOURCES
 	src/RE/B/bhkRigidBody.cpp
 	src/RE/C/CFilter.cpp
 	src/RE/C/Calendar.cpp
+	src/RE/C/ChainExplosion.cpp
 	src/RE/C/ChestsLooted.cpp
 	src/RE/C/ChildSelectorBase.cpp
 	src/RE/C/CollisionLayers.cpp
