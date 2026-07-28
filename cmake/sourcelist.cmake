@@ -368,6 +368,7 @@ set(SOURCES
 	include/RE/B/BSPortalSharedNode.h
 	include/RE/B/BSPrecomputedNavmeshInfoPathMap.h
 	include/RE/B/BSPrecomputedNavmeshInfoSearch.h
+	include/RE/B/BSProceduralLightningController.h
 	include/RE/B/BSProceduralLightningTasklet.h
 	include/RE/B/BSReloadShaderI.h
 	include/RE/B/BSRenderManager.h
@@ -2111,6 +2112,7 @@ set(SOURCES
 	src/RE/B/BSPointerHandle.cpp
 	src/RE/B/BSPortalGraph.cpp
 	src/RE/B/BSPortalGraphEntry.cpp
+	src/RE/B/BSProceduralLightningController.cpp
 	src/RE/B/BSProceduralLightningTasklet.cpp
 	src/RE/B/BSResourceNiBinaryStream.cpp
 	src/RE/B/BSResponse.cpp
