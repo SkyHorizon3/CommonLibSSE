@@ -4,12 +4,14 @@ option(REX_OPTION_INI "Enables ini config support for REX." OFF)
 option(REX_OPTION_JSON "Enables json config support for REX." OFF)
 option(REX_OPTION_TOML "Enables toml config support for REX." OFF)
 option(SKSE_SUPPORT_XBYAK "Enables trampoline support for Xbyak." OFF)
+option(SKSE_SUPPORT_PATCH_SAFETY "Validate Trampoline::write_branch patch sites land on instruction boundaries before writing (vendors hde64); logs and still writes on failure, never blocks." ON)
 option(ENABLE_SKYRIM_SE "Enable support for Skyrim SE in the dynamic runtime feature." ON)
 option(ENABLE_SKYRIM_AE "Enable support for Skyrim AE in the dynamic runtime feature." ON)
 option(ENABLE_SKYRIM_VR "Enable support for Skyrim VR in the dynamic runtime feature." ON)
 option(BUILD_TESTS "Enable building of the unit tests." ON)
 message("Options:")
 message("\tEnable Xbyak: ${SKSE_SUPPORT_XBYAK}")
+message("\tEnable Patch Safety Checks: ${SKSE_SUPPORT_PATCH_SAFETY}")
 message("\tEnable Skyrim SE: ${ENABLE_SKYRIM_SE}")
 message("\tEnable Skyrim AE: ${ENABLE_SKYRIM_AE}")
 message("\tEnable Skyrim VR: ${ENABLE_SKYRIM_VR}")
@@ -115,6 +117,24 @@ endif()
 include(cmake/sourcelist.cmake)
 include(cmake/testlist.cmake)
 
+if(SKSE_SUPPORT_PATCH_SAFETY)
+	# hde64 has no vcpkg port -- vendor MinHook's 3-file instruction-length decoder directly.
+	# LANGUAGE C (set below) needs an explicit enable_language(C), or Ninja-based
+	# generators fail at generate time (the VS generator tolerates the omission).
+	enable_language(C)
+	include(FetchContent)
+	FetchContent_Declare(
+		hde64
+		GIT_REPOSITORY https://github.com/TsudaKageyu/minhook.git
+		GIT_TAG v1.3.4
+		GIT_SHALLOW TRUE
+		# Populate source only -- MinHook's own root CMakeLists.txt would otherwise add
+		# its full hooking library as a subdirectory/target, which we don't want.
+		SOURCE_SUBDIR src/hde
+	)
+	FetchContent_MakeAvailable(hde64)
+endif()
+
 source_group(
 	TREE "${CMAKE_CURRENT_SOURCE_DIR}"
 	FILES ${SOURCES}
@@ -151,6 +171,7 @@ target_compile_definitions(
 	"$<$<BOOL:${REX_OPTION_JSON}>:REX_OPTION_JSON=1>"
 	"$<$<BOOL:${REX_OPTION_TOML}>:REX_OPTION_TOML=1>"
 	"$<$<BOOL:${SKSE_SUPPORT_XBYAK}>:SKSE_SUPPORT_XBYAK=1>"
+	"$<$<BOOL:${SKSE_SUPPORT_PATCH_SAFETY}>:SKSE_SUPPORT_PATCH_SAFETY=1>"
 	"$<$<BOOL:${ENABLE_SKYRIM_SE}>:ENABLE_SKYRIM_SE=1>"
 	"$<$<BOOL:${ENABLE_SKYRIM_AE}>:ENABLE_SKYRIM_AE=1>"
 	"$<$<BOOL:${ENABLE_SKYRIM_VR}>:ENABLE_SKYRIM_VR=1>"
@@ -229,6 +250,23 @@ target_include_directories(
 	${spdlog_INCLUDE_DIRS}
 	${RAPIDCSV_INCLUDE_DIRS}
 )
+
+if(SKSE_SUPPORT_PATCH_SAFETY)
+	# hde64.h is only ever included from Trampoline.cpp -- the check never appears in a
+	# public header, so PRIVATE keeps the vendored dependency off every downstream
+	# consumer's include path.
+	target_sources("${PROJECT_NAME}" PRIVATE "${hde64_SOURCE_DIR}/src/hde/hde64.c")
+	target_include_directories("${PROJECT_NAME}" PRIVATE "${hde64_SOURCE_DIR}/src/hde")
+	# VS doesn't reliably infer hde64.c's LANGUAGE without this (silent <None>, fails only
+	# at link time); a vendored C file also can't use our C++ precompiled header, and /WX-
+	# keeps its own warnings from becoming errors without touching the file itself.
+	set_source_files_properties(
+		"${hde64_SOURCE_DIR}/src/hde/hde64.c" PROPERTIES
+		LANGUAGE C
+		SKIP_PRECOMPILE_HEADERS ON
+		COMPILE_OPTIONS "$<$<CXX_COMPILER_ID:MSVC>:/WX->"
+	)
+endif()
 
 target_compile_definitions(
 	"${PROJECT_NAME}"
