@@ -26,9 +26,16 @@ namespace REL
 			"Source: https://github.com/alandtse/CommonLibSSE-NG";
 	}
 
-	Module::Module() noexcept { REX::W32::OutputDebugStringA(kLicenseNotice); }
+	void Module::EmitLicenseNotice() noexcept { REX::W32::OutputDebugStringA(kLicenseNotice); }
 
+	// constinit enforces that _instance is constant-initialized, so a future non-literal
+	// member cannot silently give it a dynamic initializer. The Debug STL's container debug
+	// state makes Module non-literal, so the guard applies only where it's achievable.
+#ifdef NDEBUG
+	constinit Module Module::_instance;
+#else
 	Module Module::_instance;
+#endif
 
 	void Module::load_segments()
 	{
