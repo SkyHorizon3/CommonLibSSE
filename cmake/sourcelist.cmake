@@ -439,6 +439,7 @@ set(SOURCES
 	include/RE/B/BSTSmartPointer.h
 	include/RE/B/BSTTuple.h
 	include/RE/B/BSTask.h
+	include/RE/B/BSTasklet.h
 	include/RE/B/BSTaskletData.h
 	include/RE/B/BSTaskletGroup.h
 	include/RE/B/BSTaskletGroupData.h
@@ -549,6 +550,7 @@ set(SOURCES
 	include/RE/C/Calendar.h
 	include/RE/C/CalibrationOptionMenu.h
 	include/RE/C/CalmEffect.h
+	include/RE/C/CellMopp.h
 	include/RE/C/ChainExplosion.h
 	include/RE/C/CharEvent.h
 	include/RE/C/Character.h
@@ -1117,6 +1119,7 @@ set(SOURCES
 	include/RE/H/Hazard.h
 	include/RE/H/HeapBlock.h
 	include/RE/H/HeapBlockFreeHead.h
+	include/RE/H/HeightFieldCInfo.h
 	include/RE/H/HeldStateHandler.h
 	include/RE/H/HighActorCuller.h
 	include/RE/H/HighProcessData.h
@@ -1409,6 +1412,7 @@ set(SOURCES
 	include/RE/K/KinectMenu.h
 	include/RE/K/KinectStateChangeData.h
 	include/RE/K/KinectUserEventData.h
+	include/RE/L/LandCollisionDesc.h
 	include/RE/L/LegendarySkillResetConfirmCallback.h
 	include/RE/L/LevelIncrease.h
 	include/RE/L/LevelUpMenu.h
