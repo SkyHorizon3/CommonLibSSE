@@ -1,3 +1,9 @@
+## [6.3.5](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.3.4...v6.3.5) (2026-08-21)
+
+### Bug Fixes
+
+* **rel:** find exe via GetModuleHandleW(nullptr) ([#295](https://github.com/alandtse/CommonLibSSE-NG/issues/295)) ([d38040b](https://github.com/alandtse/CommonLibSSE-NG/commit/d38040b8bf533b7611d7b59e752f3792a807a76f))
+
 ## [6.3.4](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.3.3...v6.3.4) (2026-08-18)
 
 ## [6.3.3](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.3.2...v6.3.3) (2026-08-18)
