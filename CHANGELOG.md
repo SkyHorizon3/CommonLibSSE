@@ -1,3 +1,9 @@
+## [6.6.1](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.0...v6.6.1) (2026-08-22)
+
+### Bug Fixes
+
+* **AE:** fix offset gaps in SkyrimVM/PlayerCharacter ([#306](https://github.com/alandtse/CommonLibSSE-NG/issues/306)) ([68ae73e](https://github.com/alandtse/CommonLibSSE-NG/commit/68ae73e1cb99cdf81cd406918531d0570fe1e332))
+
 ## [6.6.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.5.0...v6.6.0) (2026-08-22)
 
 ### Features
