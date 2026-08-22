@@ -1,3 +1,9 @@
+## [6.5.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.4.0...v6.5.0) (2026-08-22)
+
+### Features
+
+* **re:** model AE 1.7.99 layout changes ([#298](https://github.com/alandtse/CommonLibSSE-NG/issues/298)) ([9b1b041](https://github.com/alandtse/CommonLibSSE-NG/commit/9b1b041b9686525039e8ec587887ea29b749ab8f))
+
 ## [6.4.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.3.5...v6.4.0) (2026-08-21)
 
 ### Features
