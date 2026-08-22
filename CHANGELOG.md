@@ -1,3 +1,9 @@
+## [6.6.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.5.0...v6.6.0) (2026-08-22)
+
+### Features
+
+* **cmake:** add Linux-host cross-compile support via clang-cl+xwin ([#302](https://github.com/alandtse/CommonLibSSE-NG/issues/302)) ([848b3f9](https://github.com/alandtse/CommonLibSSE-NG/commit/848b3f9daace475aa49f539dee0c91c8e313b359)), closes [#300](https://github.com/alandtse/CommonLibSSE-NG/issues/300) [#215](https://github.com/alandtse/CommonLibSSE-NG/issues/215) [#215](https://github.com/alandtse/CommonLibSSE-NG/issues/215)
+
 ## [6.5.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.4.0...v6.5.0) (2026-08-22)
 
 ### Features
