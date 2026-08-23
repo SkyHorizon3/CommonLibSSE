@@ -1,3 +1,10 @@
+## [6.6.2](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.1...v6.6.2) (2026-08-23)
+
+### Bug Fixes
+
+* **state:** correct RUNTIME_DATA offset for 1.7.99 ([#307](https://github.com/alandtse/CommonLibSSE-NG/issues/307)) ([57cb667](https://github.com/alandtse/CommonLibSSE-NG/commit/57cb66769af52e3e3d2d073838d9303a07f0f743))
+* **state:** rename unk055 to useEarlyZ ([#308](https://github.com/alandtse/CommonLibSSE-NG/issues/308)) ([cce62f1](https://github.com/alandtse/CommonLibSSE-NG/commit/cce62f1a0d82eeb9c9905fc865301b76c74bffbc))
+
 ## [6.6.1](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.0...v6.6.1) (2026-08-22)
 
 ### Bug Fixes
