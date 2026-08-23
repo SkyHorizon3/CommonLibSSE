@@ -187,7 +187,12 @@ namespace RE
 #else
 			static constexpr std::size_t RUNTIME_DATA_VR_OFFSET = 0x60;
 #endif
-			RUNTIME_MEMBER_ACCESSOR_VERSIONED(RUNTIME_DATA, GetRuntimeData, SKSE::RUNTIME_SSE_1_6_629, 0x58, RUNTIME_DATA_VR_OFFSET, 0x60);
+			[[nodiscard]] static std::size_t RUNTIME_DATA_AE_OFFSET() noexcept
+			{
+				static const std::size_t offset = REL::Module::IsAtLeast(SKSE::RUNTIME_SSE_1_7_99) ? 0x70 : 0x60;
+				return offset;
+			}
+			RUNTIME_MEMBER_ACCESSOR_VERSIONED(RUNTIME_DATA, GetRuntimeData, SKSE::RUNTIME_SSE_1_6_629, 0x58, RUNTIME_DATA_VR_OFFSET, RUNTIME_DATA_AE_OFFSET());
 
 #if defined(ENABLE_SKYRIM_VR)
 			static_assert(RUNTIME_DATA_VR_OFFSET + offsetof(RUNTIME_DATA, dynamicResolutionWidthRatio) == 0x104);
