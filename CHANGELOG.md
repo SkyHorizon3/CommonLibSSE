@@ -1,3 +1,9 @@
+## [6.6.3](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.2...v6.6.3) (2026-08-23)
+
+### Bug Fixes
+
+* correct MapMenu/LocalMapMenu runtime-data layout ([#309](https://github.com/alandtse/CommonLibSSE-NG/issues/309)) ([7ae1c97](https://github.com/alandtse/CommonLibSSE-NG/commit/7ae1c9768c11cca293a1a4c9e6a0c55e8f4d55ae))
+
 ## [6.6.2](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.1...v6.6.2) (2026-08-23)
 
 ### Bug Fixes
