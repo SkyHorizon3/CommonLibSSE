@@ -1,3 +1,9 @@
+## [6.7.1](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.7.0...v6.7.1) (2026-08-26)
+
+### Bug Fixes
+
+* **actor:** correct SetFireNode vtable slot ([#312](https://github.com/alandtse/CommonLibSSE-NG/issues/312)) ([902c58a](https://github.com/alandtse/CommonLibSSE-NG/commit/902c58a9fd3523e89e128539e2b1245e9fe5ef12)), closes [#311](https://github.com/alandtse/CommonLibSSE-NG/issues/311) [ersh1/Precision#4](https://github.com/ersh1/Precision/issues/4) [#311](https://github.com/alandtse/CommonLibSSE-NG/issues/311) [#311](https://github.com/alandtse/CommonLibSSE-NG/issues/311)
+
 ## [6.7.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.6.3...v6.7.0) (2026-08-24)
 
 ### Features
