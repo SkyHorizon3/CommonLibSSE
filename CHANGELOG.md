@@ -1,3 +1,15 @@
+## [6.8.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.7.1...v6.8.0) (2026-08-30)
+
+### Features
+
+* **ni:** type NiBinaryExtraData/BSFaceGenBaseMorphExtraData ([#323](https://github.com/alandtse/CommonLibSSE-NG/issues/323)) ([ef8d249](https://github.com/alandtse/CommonLibSSE-NG/commit/ef8d249e805c82d4833ff7713ae1c2e7daf2ece3))
+* **ni:** type NiTriShapeData/NiTriStripsData/NiTriStrips ([#322](https://github.com/alandtse/CommonLibSSE-NG/issues/322)) ([8fb03ef](https://github.com/alandtse/CommonLibSSE-NG/commit/8fb03eff4cfad6b2a7976df7760783e030555a57))
+* **racesexmenu:** type headPart/slider fields ([#321](https://github.com/alandtse/CommonLibSSE-NG/issues/321)) ([8eccdad](https://github.com/alandtse/CommonLibSSE-NG/commit/8eccdad356726dc0f1d3449786c58d636242eb3f))
+
+### Bug Fixes
+
+* **menu:** correct AE id for BSTArray overload ([#317](https://github.com/alandtse/CommonLibSSE-NG/issues/317)) ([73a196a](https://github.com/alandtse/CommonLibSSE-NG/commit/73a196ab74a35bb67a12a9e27b4b715b01888b07))
+
 ## [6.7.1](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.7.0...v6.7.1) (2026-08-26)
 
 ### Bug Fixes
