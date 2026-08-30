@@ -1,3 +1,15 @@
+## [7.0.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.8.0...v7.0.0) (2026-08-30)
+
+### ⚠ BREAKING CHANGES
+
+* **state:** direct state->frameCount / ->insideFrame / ->useEarlyZ access no longer compiles on ENABLE_SKYRIM_AE builds; use State::GetFrameCount() / GetInsideFrame() / GetUseEarlyZ() instead.
+
+Co-authored-by: Claude Sonnet 5 <noreply@anthropic.com>
+
+### Bug Fixes
+
+* **state:** version AE>=1.7.99 frame fields ([#325](https://github.com/alandtse/CommonLibSSE-NG/issues/325)) ([86adeb8](https://github.com/alandtse/CommonLibSSE-NG/commit/86adeb8fba59f88aa613185bf10c90442bb41241))
+
 ## [6.8.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.7.1...v6.8.0) (2026-08-30)
 
 ### Features
