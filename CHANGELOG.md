@@ -1,3 +1,14 @@
+## [7.1.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v7.0.0...v7.1.0) (2026-09-02)
+
+### Features
+
+* **havok:** expand havok RE coverage, fix 2 layout bugs ([#327](https://github.com/alandtse/CommonLibSSE-NG/issues/327)) ([231543d](https://github.com/alandtse/CommonLibSSE-NG/commit/231543d61bc511865f1954f3eb2768732452c1d6))
+
+### Bug Fixes
+
+* **inventory:** default IItemChangeVisitor dtors ([#328](https://github.com/alandtse/CommonLibSSE-NG/issues/328)) ([8339e6d](https://github.com/alandtse/CommonLibSSE-NG/commit/8339e6d37f66448144d8ee25afb6a0e1a5486bea))
+* **vr:** correct PlayerCharacter VR/perk-entry-point layout ([#326](https://github.com/alandtse/CommonLibSSE-NG/issues/326)) ([b105ce1](https://github.com/alandtse/CommonLibSSE-NG/commit/b105ce17a26152a36d501a2debb50ea44aac9fac))
+
 ## [7.0.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v6.8.0...v7.0.0) (2026-08-30)
 
 ### ⚠ BREAKING CHANGES
