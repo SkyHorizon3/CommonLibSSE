@@ -1,3 +1,14 @@
+## [7.2.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v7.1.0...v7.2.0) (2026-09-03)
+
+### Features
+
+* **actor:** add PlayerCharacter::StartWaiting/Actor::StartSleeping ([#331](https://github.com/alandtse/CommonLibSSE-NG/issues/331)) ([8492509](https://github.com/alandtse/CommonLibSSE-NG/commit/84925090fc813f70686c27fae650933453af574e))
+* **menu:** add MenuEventHandlerEx adapter ([#329](https://github.com/alandtse/CommonLibSSE-NG/issues/329)) ([140b776](https://github.com/alandtse/CommonLibSSE-NG/commit/140b776e4fc11095d6f172f594e899076b9c9886))
+
+### Bug Fixes
+
+* **vr:** correct render-mode 24 enum name ([#330](https://github.com/alandtse/CommonLibSSE-NG/issues/330)) ([f905c52](https://github.com/alandtse/CommonLibSSE-NG/commit/f905c520a402b6891ab4c4f00184024681571664))
+
 ## [7.1.0](https://github.com/alandtse/CommonLibSSE-NG/compare/v7.0.0...v7.1.0) (2026-09-02)
 
 ### Features
