@@ -15,7 +15,8 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_CombatBehaviorTreeNode;
 		inline static constexpr auto VTABLE = VTABLE_CombatBehaviorTreeNode;
 
-		virtual ~CombatBehaviorTreeNode();  // 00
+		CombatBehaviorTreeNode();
+		virtual ~CombatBehaviorTreeNode() = default;  // 00
 
 		virtual const BSFixedString& GetName();                                                                      // 01
 		virtual void                 Enter(CombatBehaviorThread* a_thread);                                          // 02
@@ -36,6 +37,9 @@ namespace RE
 		CombatBehaviorTreeNode** children;    // 18
 		std::uint32_t            childCount;  // 20
 		std::uint32_t            pad24;       // 24
+
+	private:
+		CombatBehaviorTreeNode* Ctor();
 	};
 	static_assert(sizeof(CombatBehaviorTreeNode) == 0x28);
 }
