@@ -16,7 +16,7 @@ namespace RE
 		inline static constexpr auto VTABLE = VTABLE_CombatBehaviorTreeNode;
 
 		CombatBehaviorTreeNode();
-		virtual ~CombatBehaviorTreeNode() = default;  // 00
+		virtual ~CombatBehaviorTreeNode();  // 00
 
 		virtual const BSFixedString& GetName();                                                                      // 01
 		virtual void                 Enter(CombatBehaviorThread* a_thread);                                          // 02
@@ -40,6 +40,7 @@ namespace RE
 
 	private:
 		CombatBehaviorTreeNode* Ctor();
+		void                    Dtor();
 	};
 	static_assert(sizeof(CombatBehaviorTreeNode) == 0x28);
 }

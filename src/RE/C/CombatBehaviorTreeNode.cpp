@@ -7,6 +7,11 @@ namespace RE
 		Ctor();
 	}
 
+	CombatBehaviorTreeNode::~CombatBehaviorTreeNode()
+	{
+		Dtor();
+	}
+
 	void CombatBehaviorTreeNode::AddChild(CombatBehaviorTreeNode* a_child)
 	{
 		using func_t = decltype(&CombatBehaviorTreeNode::AddChild);
@@ -26,5 +31,12 @@ namespace RE
 		using func_t = decltype(&CombatBehaviorTreeNode::Ctor);
 		static REL::Relocation<func_t> func{ RELOCATION_ID(46301, 47545) };
 		return func(this);
+	}
+
+	void CombatBehaviorTreeNode::Dtor()
+	{
+		using func_t = decltype(&CombatBehaviorTreeNode::Ctor);
+		static REL::Relocation<func_t> func{ RELOCATION_ID(46302, 47546) };
+		func(this);
 	}
 }
