@@ -542,6 +542,8 @@
 #include "RE/C/CombatBehaviorTreeLinkNode.h"
 #include "RE/C/CombatBehaviorTreeManager.h"
 #include "RE/C/CombatBehaviorTreeNode.h"
+#include "RE/C/CombatBehaviorTreeNodeObject.h"
+#include "RE/C/CombatBehaviorTreeNodeObjectBase.h"
 #include "RE/C/CombatController.h"
 #include "RE/C/CombatGroup.h"
 #include "RE/C/CombatGroupDetectionListener.h"

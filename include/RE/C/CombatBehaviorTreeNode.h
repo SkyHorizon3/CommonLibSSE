@@ -16,7 +16,7 @@ namespace RE
 		inline static constexpr auto VTABLE = VTABLE_CombatBehaviorTreeNode;
 
 		CombatBehaviorTreeNode();
-		virtual ~CombatBehaviorTreeNode();  // 00
+		virtual ~CombatBehaviorTreeNode() = default;  // 00
 
 		virtual const BSFixedString& GetName();                                                                      // 01
 		virtual void                 Enter(CombatBehaviorThread* a_thread);                                          // 02
@@ -25,8 +25,8 @@ namespace RE
 		virtual void                 Abort(CombatBehaviorThread* a_thread);                                          // 05
 		virtual void                 SaveGame(CombatBehaviorThread* a_thread, BGSSaveFormBuffer* a_saveGameBuffer);  // 06
 		virtual void                 LoadGame(CombatBehaviorThread* a_thread, BGSLoadFormBuffer* a_loadGameBuffer);  // 07
-		virtual bool                 Validate(const CombatBehaviorTreeNode* a_node);                                 // 08
-		virtual const BSFixedString& GetType();                                                                      // 09
+		virtual bool                 Validate(const CombatBehaviorTreeNode* a_node);                                 // 08 - { return true; }
+		virtual const BSFixedString& GetType() = 0;                                                                  // 09
 
 		void AddChild(CombatBehaviorTreeNode* a_child);
 		void AddChildren(const BSTArray<CombatBehaviorTreeNode*>& a_children);
@@ -38,9 +38,8 @@ namespace RE
 		std::uint32_t            childCount;  // 20
 		std::uint32_t            pad24;       // 24
 
-	private:
+	protected:
 		CombatBehaviorTreeNode* Ctor();
-		void                    Dtor();
 	};
 	static_assert(sizeof(CombatBehaviorTreeNode) == 0x28);
 }
