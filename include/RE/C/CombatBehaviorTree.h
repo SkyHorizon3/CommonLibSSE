@@ -34,16 +34,9 @@ namespace RE
 		static Actor*       GetTarget();
 
 		template <class T>
-		static T* CreateObject()
+		static CombatBehaviorTreeNodeObject<T>* CreateObject()
 		{
-			static_assert(sizeof(CombatBehaviorTreeNodeObject<T>) == 0x28);
-			auto obj = malloc<CombatBehaviorTreeNodeObject<T>>();
-			if (obj) {
-				std::memset(obj, 0, sizeof(CombatBehaviorTreeNodeObject<T>));
-				obj->Ctor();  // CombatBehaviorTreeNode::Ctor
-				REX::EMPLACE_VTABLE(obj);
-			}
-			return obj;
+			return CombatBehaviorTreeNodeObject<T>::CreateObject();
 		}
 
 		// members

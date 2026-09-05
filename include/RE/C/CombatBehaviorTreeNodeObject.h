@@ -158,5 +158,17 @@ namespace RE
 
 		// override (CombatBehaviorTreeNodeObjectBase<T>)
 		void Enter(CombatBehaviorThread* a_thread) override;  // 02
+
+		static CombatBehaviorTreeNodeObject<T>* CreateObject()
+		{
+			static_assert(sizeof(CombatBehaviorTreeNodeObject<T>) == 0x28);
+			auto obj = malloc<CombatBehaviorTreeNodeObject<T>>();
+			if (obj) {
+				std::memset(obj, 0, sizeof(CombatBehaviorTreeNodeObject<T>));
+				obj->Ctor();  // CombatBehaviorTreeNode::Ctor
+				REX::EMPLACE_VTABLE(obj);
+			}
+			return obj;
+		}
 	};
 }
