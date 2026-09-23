@@ -61,6 +61,7 @@ set(SOURCES
 	include/RE/A/ahkpWorld.h
 	include/RE/B/BGSAbilityPerkEntry.h
 	include/RE/B/BGSAcousticSpace.h
+	include/RE/B/BGSAcousticSpaceListener.h
 	include/RE/B/BGSAction.h
 	include/RE/B/BGSActionData.h
 	include/RE/B/BGSActorCellEvent.h
@@ -491,6 +492,7 @@ set(SOURCES
 	include/RE/B/bhkCompressedMeshShapeData.h
 	include/RE/B/bhkContactListener.h
 	include/RE/B/bhkEntity.h
+	include/RE/B/bhkEntityListener.h
 	include/RE/B/bhkListShape.h
 	include/RE/B/bhkMeshMaterial.h
 	include/RE/B/bhkMouseSpringAction.h
@@ -1644,6 +1646,7 @@ set(SOURCES
 	include/RE/T/TESActorLocationChangeEvent.h
 	include/RE/T/TESAmmo.h
 	include/RE/T/TESAttackDamageForm.h
+	include/RE/T/TESAudio.h
 	include/RE/T/TESBipedModelForm.h
 	include/RE/T/TESBookReadEvent.h
 	include/RE/T/TESBoundAnimObject.h
@@ -2177,6 +2180,7 @@ set(SOURCES
 	src/RE/T/TES.cpp
 	src/RE/T/TESAIForm.cpp
 	src/RE/T/TESAmmo.cpp
+	src/RE/T/TESAudio.cpp
 	src/RE/T/TESCamera.cpp
 	src/RE/T/TESClimate.cpp
 	src/RE/T/TESCondition.cpp
