@@ -353,6 +353,8 @@ set(SOURCES
 	include/RE/B/BSPortalGraphEntry.h
 	include/RE/B/BSPortalSharedNode.h
 	include/RE/B/BSPrecomputedNavmeshInfoPathMap.h
+	include/RE/B/BSProceduralGeomEvent.h
+	include/RE/B/BSProceduralLightningController.h
 	include/RE/B/BSProceduralLightningTasklet.h
 	include/RE/B/BSReloadShaderI.h
 	include/RE/B/BSRenderPass.h

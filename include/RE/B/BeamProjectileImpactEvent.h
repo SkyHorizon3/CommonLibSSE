@@ -9,6 +9,7 @@ namespace RE
 	struct BeamProjectileImpactEvent
 	{
 	public:
+		// members
 		Projectile*   projectile;  // 00
 		NiPoint3      contactPos;  // 08
 		std::uint32_t pad14;       // 14
