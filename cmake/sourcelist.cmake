@@ -353,6 +353,7 @@ set(SOURCES
 	include/RE/B/BSPortalGraphEntry.h
 	include/RE/B/BSPortalSharedNode.h
 	include/RE/B/BSPrecomputedNavmeshInfoPathMap.h
+	include/RE/B/BSProceduralLightningTasklet.h
 	include/RE/B/BSReloadShaderI.h
 	include/RE/B/BSRenderPass.h
 	include/RE/B/BSResource.h
@@ -418,6 +419,7 @@ set(SOURCES
 	include/RE/B/BSTSingleton.h
 	include/RE/B/BSTSmartPointer.h
 	include/RE/B/BSTTuple.h
+	include/RE/B/BSTaskletData.h
 	include/RE/B/BSTempEffect.h
 	include/RE/B/BSTempEffectDebris.h
 	include/RE/B/BSTempEffectGeometryDecal.h
@@ -448,6 +450,7 @@ set(SOURCES
 	include/RE/B/BSWin32MouseDevice.h
 	include/RE/B/BSWin32SaveDataSystemUtility.h
 	include/RE/B/BSWin32SystemUtility.h
+	include/RE/B/BSWin32TaskletData.h
 	include/RE/B/BSWin32VirtualKeyboardDevice.h
 	include/RE/B/BSWindModifier.h
 	include/RE/B/BSXAudio2Audio.h
