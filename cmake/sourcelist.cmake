@@ -462,6 +462,7 @@ set(SOURCES
 	include/RE/B/BaseFormComponent.h
 	include/RE/B/BaseHandleReaderWriter.h
 	include/RE/B/BeamProjectile.h
+	include/RE/B/BeamProjectileImpactEvent.h
 	include/RE/B/BipedAnim.h
 	include/RE/B/BipedObjects.h
 	include/RE/B/BleedoutCameraState.h
@@ -520,6 +521,7 @@ set(SOURCES
 	include/RE/C/CXAPOBase.h
 	include/RE/C/Calendar.h
 	include/RE/C/CalmEffect.h
+	include/RE/C/ChainExplosion.h
 	include/RE/C/CharEvent.h
 	include/RE/C/Character.h
 	include/RE/C/ChestsLooted.h
@@ -1202,6 +1204,7 @@ set(SOURCES
 	include/RE/I/ICellAttachDetachEventSource.h
 	include/RE/I/ID.h
 	include/RE/I/IDEvent.h
+	include/RE/I/IExplosionFactory.h
 	include/RE/I/IFormFactory.h
 	include/RE/I/IFreezeQuery.h
 	include/RE/I/IFuncCallQuery.h

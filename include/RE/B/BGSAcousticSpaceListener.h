@@ -1,7 +1,5 @@
 #pragma once
 
-#include "RE/B/BSPointerHandle.h"
-#include "RE/b/BSTHashMap.h"
 #include "RE/b/bhkEntityListener.h"
 
 namespace RE
