@@ -32,6 +32,7 @@ set(SOURCES
 	include/RE/A/ActorValueOwner.h
 	include/RE/A/ActorValues.h
 	include/RE/A/AddCallbackVisitor.h
+	include/RE/A/AddCellGrassTask.h
 	include/RE/A/AlchemyItem.h
 	include/RE/A/AlchemyMenu.h
 	include/RE/A/AmiiboEvent.h
@@ -421,6 +422,7 @@ set(SOURCES
 	include/RE/B/BSTSingleton.h
 	include/RE/B/BSTSmartPointer.h
 	include/RE/B/BSTTuple.h
+	include/RE/B/BSTask.h
 	include/RE/B/BSTaskletData.h
 	include/RE/B/BSTempEffect.h
 	include/RE/B/BSTempEffectDebris.h
@@ -1236,6 +1238,7 @@ set(SOURCES
 	include/RE/I/IMovementState.h
 	include/RE/I/INIPrefSettingCollection.h
 	include/RE/I/INISettingCollection.h
+	include/RE/I/IOTask.h
 	include/RE/I/IObjectHandlePolicy.h
 	include/RE/I/IObjectProcessor.h
 	include/RE/I/IPackageData.h
@@ -1535,6 +1538,7 @@ set(SOURCES
 	include/RE/Q/QuestEvents.h
 	include/RE/Q/QuestObjectiveStates.h
 	include/RE/Q/QuestStatus.h
+	include/RE/Q/QueuedFile.h
 	include/RE/Q/QuickSaveLoadHandler.h
 	include/RE/R/REFREventCallbacks.h
 	include/RE/R/RaceSexCamera.h
