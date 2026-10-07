@@ -637,7 +637,7 @@ namespace RE
 		void                         ProcessVATSAttack(MagicCaster* a_caster, bool a_hasTargetAnim, TESObjectREFR* a_target, bool a_leftHand);
 		void                         RemoveAnimationGraphEventSink(BSTEventSink<BSAnimationGraphEvent>* a_sink) const;
 		void                         RemoveCastScroll(SpellItem* a_spell, MagicSystem::CastingSource a_source);
-		void                         RefreshEquippedActorValueCharge(const RE::TESForm* a_object, const RE::ExtraDataList* a_extraList, bool a_isLeft);
+		void                         RefreshEquippedActorValueCharge(TESForm* a_object, ExtraDataList* a_extraList, bool a_isLeft);
 		void                         RemoveExtraArrows3D();
 		void                         RemoveFromFaction(TESFaction* a_faction);
 		void                         RemoveOutfitItems(BGSOutfit* a_outfit);
@@ -662,7 +662,6 @@ namespace RE
 		void                         UpdateHairColor();
 		void                         UpdateRegenDelay(ActorValue a_actorValue, float a_regenDelay);
 		void                         UpdateSkinColor();
-		void                         UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
 		void                         VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma, std::function<void(bool a_firstPerson, NiAVObject& a_obj)> a_visitor);
 		bool                         VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
 		void                         VisitSpells(ForEachSpellVisitor& a_visitor);
