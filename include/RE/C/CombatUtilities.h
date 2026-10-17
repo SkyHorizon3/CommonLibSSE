@@ -15,5 +15,12 @@ namespace RE
 			static REL::Relocation<func_t> func{ RELOCATION_ID(46022, 47286) };
 			return func(a_origin, a_target, a_speed, a_gravity, a_location);
 		}
+
+		static bool CheckStraightPath(RE::TESObjectREFR* a_ref, const RE::NiPoint3& a_startPos, RE::NiPoint3& a_endPos, float a_speed, float a_minDistance)
+		{
+			using func_t = decltype(&CheckStraightPath);
+			static REL::Relocation<func_t> func{ RELOCATION_ID(46050, 47314) };
+			return func(a_ref, a_startPos, a_endPos, a_speed, a_minDistance);
+		}
 	};
 }
