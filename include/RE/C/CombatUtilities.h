@@ -12,7 +12,7 @@ namespace RE
 		static NiPoint3 GetAngleToProjectedTarget(NiPoint3 a_origin, TESObjectREFR* a_target, float a_speed, float a_gravity, ACTOR_LOS_LOCATION a_location)
 		{
 			using func_t = decltype(&GetAngleToProjectedTarget);
-			static REL::Relocation<func_t> func{ RELOCATION_ID(46022, 47286) };
+			static REL::Relocation<func_t> func{ RELOCATION_ID(46022, 523983) };
 			return func(a_origin, a_target, a_speed, a_gravity, a_location);
 		}
 

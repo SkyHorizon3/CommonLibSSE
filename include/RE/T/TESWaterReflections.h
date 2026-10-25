@@ -67,7 +67,6 @@ namespace RE
 
 	private:
 		TESWaterReflections* Ctor(const NiPlane& a_plane, BSWaterShaderMaterial* a_mat, std::uint16_t a_flags, const char* a_texture);
-		void                 Dtor();
 	};
 	static_assert(sizeof(TESWaterReflections) == 0x88);
 }

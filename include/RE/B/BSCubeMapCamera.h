@@ -53,11 +53,11 @@ namespace RE
 		void SetFace(Face a_face);
 
 		// members
-		BSTArray<NiPointer<NiAVObject>> scenes;             // 188
-		NiPointer<BSShaderAccumulator>  accumulator;        // 1A0
-		NiPointer<BSShaderAccumulator>  secondAccumulator;  // 1A8
-		NiPointer<NiCamera>             unk1B0;             // 1B0
-		NiColorA                        silhouetteColor;    // 1B8
+		BSTArray<NiPointer<NiAVObject>> scenes;                 // 188
+		NiPointer<BSShaderAccumulator>  accumulator;            // 1A0
+		NiPointer<BSShaderAccumulator>  accumulatorBackground;  // 1A8
+		NiPointer<NiCamera>             cameraBackground;       // 1B0
+		NiColorA                        silhouetteColor;        // 1B8
 
 	protected:
 		BSCubeMapCamera* Ctor();
