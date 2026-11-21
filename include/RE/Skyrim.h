@@ -539,6 +539,7 @@
 #include "RE/C/Calendar.h"
 #include "RE/C/CalmEffect.h"
 #include "RE/C/CellLoaderTask.h"
+#include "RE/C/CellMopp.h"
 #include "RE/C/ChainExplosion.h"
 #include "RE/C/CharEvent.h"
 #include "RE/C/Character.h"

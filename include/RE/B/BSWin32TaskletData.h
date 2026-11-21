@@ -5,6 +5,8 @@
 
 namespace RE
 {
+	class BSWin32TaskletGroupData;
+
 	class BSWin32TaskletData : public BSTaskletData
 	{
 	public:
@@ -14,10 +16,12 @@ namespace RE
 		~BSWin32TaskletData() override;  // 00
 
 		// members
-		std::uint64_t          unk10;     // 10
-		std::uint32_t          unk18;     // 18
-		BSNonReentrantSpinLock taskLock;  // 1C
-		BSWin32TaskletData*    unk20;     // 20
+		BSWin32TaskletGroupData* groupData;     // 10
+		bool                     runOnStartup;  // 18
+		std::uint8_t             pad19;         // 19
+		std::uint16_t            pad1A;         // 1A
+		BSNonReentrantSpinLock   taskLock;      // 1C
+		BSWin32TaskletData*      next;          // 20
 	};
 	static_assert(sizeof(BSWin32TaskletData) == 0x28);
 }
