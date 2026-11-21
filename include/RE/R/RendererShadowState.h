@@ -11,9 +11,6 @@
 
 #include "REX/W32/D3D11.h"
 
-struct ID3D11ShaderResourceView;
-struct ID3D11UnorderedAccessView;
-
 namespace RE
 {
 	namespace BSGraphics
@@ -141,12 +138,12 @@ namespace RE
 			float                                            alphaTestRef;                                                           // B8
 			REX::TEnumSet<TextureAddressMode, std::uint32_t> PSTextureAddressMode[16];                                               // BC
 			REX::TEnumSet<TextureFilterMode, std::uint32_t>  PSTextureFilterMode[16];                                                // FC
-			ID3D11ShaderResourceView*                        PSTexture[16];                                                          // 140
+			REX::W32::ID3D11ShaderResourceView*              PSTexture[16];                                                          // 140
 			REX::TEnumSet<TextureAddressMode, std::uint32_t> CSTextureAddressMode[16];                                               // 1C0
 			REX::TEnumSet<TextureFilterMode, std::uint32_t>  CSTextureFilterMode[16];                                                // 200
-			ID3D11ShaderResourceView*                        CSTexture[16];                                                          // 240
+			REX::W32::ID3D11ShaderResourceView*              CSTexture[16];                                                          // 240
 			std::uint32_t                                    CSTextureMinLodMode[16];                                                // 2C0
-			ID3D11UnorderedAccessView*                       CSUnorderedAccessView[8];                                               // 300
+			REX::W32::ID3D11UnorderedAccessView*             CSUnorderedAccessView[8];                                               // 300
 			std::uint64_t                                    vertexDesc;                                                             // 340
 			VertexShader*                                    currentVertexShader;                                                    // 348
 			PixelShader*                                     currentPixelShader;                                                     // 350

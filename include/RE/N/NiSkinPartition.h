@@ -1,25 +1,24 @@
 #pragma once
 
 #include "RE/M/MemoryManager.h"
-#include "RE/N/NiGeometryData.h"
 #include "RE/N/NiObject.h"
 #include "RE/V/VertexDesc.h"
 
+#include "REX/W32/D3D11.h"
+
 namespace RE
 {
-	struct ID3D11Buffer;
-
 	namespace BSGraphics
 	{
 		struct TriShape
 		{
-			ID3D11Buffer*          vertexBuffer;   // 00
-			ID3D11Buffer*          indexBuffer;    // 08
-			BSGraphics::VertexDesc vertexDesc;     // 10
-			volatile std::uint32_t refCount;       // 18
-			std::uint32_t          pad1C;          // 1C
-			std::uint8_t*          rawVertexData;  // 20
-			std::uint16_t*         rawIndexData;   // 28
+			REX::W32::ID3D11Buffer* vertexBuffer;   // 00
+			REX::W32::ID3D11Buffer* indexBuffer;    // 08
+			BSGraphics::VertexDesc  vertexDesc;     // 10
+			volatile std::uint32_t  refCount;       // 18
+			std::uint32_t           pad1C;          // 1C
+			std::uint8_t*           rawVertexData;  // 20
+			std::uint16_t*          rawIndexData;   // 28
 		};
 		static_assert(sizeof(TriShape) == 0x30);
 	}

@@ -428,6 +428,7 @@
 #include "RE/B/BSTask.h"
 #include "RE/B/BSTaskManager.h"
 #include "RE/B/BSTaskManagerWaitAction.h"
+#include "RE/B/BSTasklet.h"
 #include "RE/B/BSTaskletData.h"
 #include "RE/B/BSTaskletGroup.h"
 #include "RE/B/BSTaskletGroupData.h"
