@@ -77,7 +77,7 @@ namespace RE
 		[[nodiscard]] virtual std::uint16_t GetActiveVertexCount() const;                 // 26 - { return vertices; }
 		virtual NiTriStripsData*            AsTriStripsData();                            // 27 - { return 0; }
 		virtual NiTriShapeData*             AsTriShapeData();                             // 28 - { return 0; }
-		virtual void                        Unk_29(void) = 0;                             // 29
+		virtual void                        CalculateNormals() = 0;                       // 29
 
 		// members
 		std::uint16_t                             vertices;            // 10
