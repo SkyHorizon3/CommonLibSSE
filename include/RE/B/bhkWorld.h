@@ -8,6 +8,7 @@ namespace RE
 {
 	struct bhkPickData;
 	class BGSAcousticSpaceListener;
+	class bhkTrapListener;
 	class hkpSuspendInactiveAgentsUtil;
 	class NiAVObject;
 
@@ -73,7 +74,7 @@ namespace RE
 		mutable BSReadWriteLock       unkC5A0;                    // C5A0
 		std::uint64_t                 unkC5A8;                    // C5A8
 		hkVector4                     unkC5B0;                    // C5B0
-		std::uint64_t                 unkC5C0;                    // C5C0
+		bhkTrapListener*              trapListener;               // C5C0
 		BGSAcousticSpaceListener*     acousticSpaceListener;      // C5C8
 		hkpSuspendInactiveAgentsUtil* suspendInactiveAgentsUtil;  // C5D0
 #ifndef SKYRIM_SUPPORT_AE

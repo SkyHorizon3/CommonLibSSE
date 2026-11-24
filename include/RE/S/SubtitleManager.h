@@ -31,9 +31,16 @@ namespace RE
 
 		void KillSubtitles()
 		{
-			using func_t = decltype(&SubtitleManager ::KillSubtitles);
+			using func_t = decltype(&SubtitleManager::KillSubtitles);
 			static REL::Relocation<func_t> func{ RELOCATION_ID(51755, 52628) };
-			return func(this);
+			func(this);
+		}
+
+		void HideSubtitle(TESObjectREFR* a_speaker)
+		{
+			using func_t = decltype(&SubtitleManager::HideSubtitle);
+			static REL::Relocation<func_t> func{ RELOCATION_ID(51754, 52627) };
+			func(this, a_speaker);
 		}
 
 		// members

@@ -220,6 +220,7 @@ set(SOURCES
 	include/RE/B/BGSVoiceType.h
 	include/RE/B/BGSVolumetricLighting.h
 	include/RE/B/BGSWorldLocation.h
+	include/RE/B/BGSZoneTargetListener.h
 	include/RE/B/BSAnimNote.h
 	include/RE/B/BSAnimNoteListener.h
 	include/RE/B/BSAnimationGraphChannel.h
@@ -525,8 +526,10 @@ set(SOURCES
 	include/RE/B/bhkShape.h
 	include/RE/B/bhkShapeCollection.h
 	include/RE/B/bhkShapePhantom.h
+	include/RE/B/bhkTTNode.h
 	include/RE/B/bhkTelekinesisListener.h
 	include/RE/B/bhkThreadMemorySource.h
+	include/RE/B/bhkTrapListener.h
 	include/RE/B/bhkUnaryAction.h
 	include/RE/B/bhkWorld.h
 	include/RE/B/bhkWorldCinfo.h
@@ -1817,6 +1820,7 @@ set(SOURCES
 	include/RE/T/TESTopicInfo.h
 	include/RE/T/TESTopicInfoEvent.h
 	include/RE/T/TESTrackedStatsEvent.h
+	include/RE/T/TESTrapListener.h
 	include/RE/T/TESUniqueIDChangeEvent.h
 	include/RE/T/TESValueForm.h
 	include/RE/T/TESWaitStopEvent.h
@@ -1885,6 +1889,7 @@ set(SOURCES
 	include/RE/X/XAudio2.h
 	include/RE/Z/ZeroFunctionArguments.h
 	include/RE/Z/ZeroOverheadHeap.h
+	include/RE/Z/ZoneEntry.h
 	include/SKSE/API.h
 	include/SKSE/Events.h
 	include/SKSE/Impl/PCH.h
